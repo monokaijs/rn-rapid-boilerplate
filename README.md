@@ -243,7 +243,7 @@ export const AppColors = {
 ```
 
 **Using colors in components:**
-```typescript
+```tsx
 import { useColors } from '@/hooks/useColors';
 
 const MyComponent = () => {
@@ -262,7 +262,7 @@ const MyComponent = () => {
 ### 3. 📱 Adding New Screens
 
 **Step 1: Create the screen component**
-```typescript
+```tsx
 // src/screens/ProfileScreen.tsx
 import React from 'react';
 import { View, Text } from 'react-native';
@@ -282,7 +282,7 @@ export default ProfileScreen;
 ```
 
 **Step 2: Add route types**
-```typescript
+```tsx
 // src/navigation/types.ts
 export type RootStackParamList = {
   Main: NavigatorScreenParams<MainTabParamList>;
@@ -292,7 +292,7 @@ export type RootStackParamList = {
 ```
 
 **Step 3: Add to navigator**
-```typescript
+```tsx
 // src/navigation/RootNavigator.tsx
 import ProfileScreen from '@/screens/ProfileScreen';
 
@@ -307,7 +307,7 @@ import ProfileScreen from '@/screens/ProfileScreen';
 ### 4. 🗄️ Adding Redux State
 
 **Step 1: Create a new slice**
-```typescript
+```tsx
 // src/store/slices/userSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
