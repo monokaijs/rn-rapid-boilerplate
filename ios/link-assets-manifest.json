@@ -1,0 +1,37 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/SourceSans3-Black.ttf",
+      "sha1": "2e9fabee5054e4cb3ac1e90826e897e8e17b1e77"
+    },
+    {
+      "path": "assets/fonts/SourceSans3-Bold.ttf",
+      "sha1": "cc46ab0e6ad07ff446bd94d8843b0fc971b9d9f1"
+    },
+    {
+      "path": "assets/fonts/SourceSans3-ExtraBold.ttf",
+      "sha1": "3f524ca46a95dbebb0a48e87eb10ff8b6a953ee5"
+    },
+    {
+      "path": "assets/fonts/SourceSans3-ExtraLight.ttf",
+      "sha1": "6cf6d73c014425addaace5a8e114cc604d3bdf58"
+    },
+    {
+      "path": "assets/fonts/SourceSans3-Light.ttf",
+      "sha1": "4e6f99295a5c73dba5676197b15e563912b27c53"
+    },
+    {
+      "path": "assets/fonts/SourceSans3-Medium.ttf",
+      "sha1": "83eb79459a8e39765bbcf9716712b6c6d15dcbbe"
+    },
+    {
+      "path": "assets/fonts/SourceSans3-Regular.ttf",
+      "sha1": "9251a4dbc1de55e1120a094dc2c721b4d75518c2"
+    },
+    {
+      "path": "assets/fonts/SourceSans3-SemiBold.ttf",
+      "sha1": "7a5ca03083f0c8d402d3bd07e2925d7668fc7510"
+    }
+  ]
+}

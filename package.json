@@ -1,0 +1,61 @@
+{
+  "name": "react-native-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "generate-theme": "node scripts/generate-theme-files.js"
+  },
+  "dependencies": {
+    "@react-native-cookies/cookies": "^6.2.1",
+    "@react-native/new-app-screen": "0.80.0",
+    "@react-navigation/bottom-tabs": "^7.4.2",
+    "@react-navigation/native": "^7.1.14",
+    "@react-navigation/native-stack": "^7.3.21",
+    "@reduxjs/toolkit": "^2.8.2",
+    "class-variance-authority": "^0.7.1",
+    "lucide-react-native": "^0.525.0",
+    "nativewind": "^4.1.23",
+    "react": "19.1.0",
+    "react-native": "0.80.0",
+    "react-native-gesture-handler": "^2.26.0",
+    "react-native-mmkv": "^3.3.0",
+    "react-native-reanimated": "^3.18.0",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "^4.11.1",
+    "react-native-svg": "^15.12.0",
+    "react-native-url-polyfill": "^2.0.0",
+    "react-redux": "^9.2.0",
+    "redux-persist": "^6.0.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "19.0.0",
+    "@react-native-community/cli-platform-android": "19.0.0",
+    "@react-native-community/cli-platform-ios": "19.0.0",
+    "@react-native/babel-preset": "0.80.0",
+    "@react-native/eslint-config": "0.80.0",
+    "@react-native/metro-config": "0.80.0",
+    "@react-native/typescript-config": "0.80.0",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^24.0.4",
+    "@types/react": "^19.1.0",
+    "@types/react-native": "^0.73.0",
+    "@types/react-test-renderer": "^19.1.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "clsx": "^2.1.1",
+    "react-test-renderer": "19.1.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "yarn@4.9.1"
+}
