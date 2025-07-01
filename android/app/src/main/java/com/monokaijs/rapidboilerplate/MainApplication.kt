@@ -1,4 +1,4 @@
-package com.miniappcenter
+package com.monokaijs.rapidboilerplate
 
 import android.app.Application
 import com.facebook.react.PackageList
