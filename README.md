@@ -226,18 +226,18 @@ The boilerplate includes a comprehensive color system with dark/light mode suppo
 // src/config/colors.ts
 export const AppColors = {
   // Primary brand colors
-  primaryPrimary: '#e85a5a',        // Main brand color
-  background: '#fafafa',            // Background color
-  foreground: '#0a0b0a',            // Foreground color
+  primary: '#e85a5a',               // Main brand color
+  background: '#0a0b0a',            // Background color
+  foreground: '#fafafa',            // Foreground color
 
   // Semantic colors
-  successSuccess: '#a4f4e7',        // Success states
-  warningWarning: '#f4c790',        // Warning states
-  errorError: '#e4626f',            // Error states
+  success: '#a4f4e7',               // Success states
+  warning: '#f4c790',               // Warning states
+  error: '#e4626f',                 // Error states
 
   // Neutral palette
-  neutralsNeutrals800: '#1d1d1d',   // Dark surfaces
-  neutralsNeutrals400: '#6e6e6e',   // Muted text
+  neutrals800: '#1d1d1d',           // Dark surfaces
+  neutrals400: '#6e6e6e',           // Muted text
   // ... 100+ color tokens
 };
 ```
@@ -250,8 +250,8 @@ const MyComponent = () => {
   const colors = useColors(); // Automatically theme-aware
 
   return (
-    <View style={{ backgroundColor: colors.baseBackground }}>
-      <Text style={{ color: colors.primaryPrimary }}>
+    <View style={{ backgroundColor: colors.background }}>
+      <Text style={{ color: colors.primary }}>
         Themed content
       </Text>
     </View>
