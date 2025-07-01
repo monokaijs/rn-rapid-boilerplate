@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: AppColors.baseBaseBlack,
+    backgroundColor: AppColors.baseBackground,
   },
   text: {
     ...getTextStyles('mobileFeatureStandard'),
-    color: AppColors.baseBaseWhite,
+    color: AppColors.baseForeground,
     marginTop: 16,
   },
 });

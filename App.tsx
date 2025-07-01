@@ -30,9 +30,9 @@ const AppContent: React.FC = () => {
           dark: theme === "dark",
           colors: {
             primary: colors.primary,
-            background: colors.baseBlack,
+            background: colors.background,
             card: colors.neutrals800,
-            text: colors.baseWhite,
+            text: colors.foreground,
             border: colors.neutrals700,
             notification: colors.primary,
           },

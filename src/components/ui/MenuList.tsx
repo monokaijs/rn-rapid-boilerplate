@@ -19,7 +19,7 @@ export default function MenuList(props: MenuListProps) {
         <View className={'bg-neutrals900 w-16 h-16 rounded-full flex items-center justify-center'}>
           <item.icon />
         </View>
-        <Text className={'text-lg font-sans-regular text-base-white flex-1'}>{item.title}</Text>
+        <Text className={'text-lg font-sans-regular text-foreground flex-1'}>{item.title}</Text>
         <ChevronRight
           size={22}
           className={'text-neutral-600'}

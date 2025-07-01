@@ -32,8 +32,8 @@ module.exports = {
       },
       colors: {
         // Theme-aware colors using CSS custom properties
-        'base-black': 'rgb(var(--color-base-black) / <alpha-value>)',
-        'base-white': 'rgb(var(--color-base-white) / <alpha-value>)',
+        'background': 'rgb(var(--color-background) / <alpha-value>)',
+        'foreground': 'rgb(var(--color-foreground) / <alpha-value>)',
 
         'primary': 'rgb(var(--color-primary) / <alpha-value>)',
         'primary100': 'rgb(var(--color-primary100) / <alpha-value>)',

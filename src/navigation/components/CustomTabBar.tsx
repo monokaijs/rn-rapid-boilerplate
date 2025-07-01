@@ -34,7 +34,7 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({
 
   return (
     <View
-      className={'bg-base-black flex-row py-2 border-t border-neutrals900'}
+      className={'bg-background flex-row py-2 border-t border-neutrals900'}
     >
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];

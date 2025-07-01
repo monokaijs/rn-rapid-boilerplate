@@ -1,6 +1,6 @@
 export const AppColors = {
-  baseWhite: '#fafafa',
-  baseBlack: '#0a0b0a',
+  foreground: '#fafafa',
+  background: '#0a0b0a',
   primary: '#e85a5a',
   secondary: '#aab9c5',
   success: '#a4f4e7',
@@ -28,7 +28,7 @@ export const AppColors = {
   secondary800: '#637d92',
   secondary900: '#4a5e6d',
   secondary1000: '#323f49',
-  neutralsBaseWhite: '#fafafa',
+  neutralsForeground: '#fafafa',
   neutrals100: '#949494',
   neutrals200: '#858585',
   neutrals300: '#7a7a7a',
@@ -39,7 +39,7 @@ export const AppColors = {
   neutrals800: '#1d1d1d',
   neutrals900: '#1c1c1c',
   neutrals1000: '#111111',
-  neutralsBaseBlack: '#0a0b0a',
+  neutralsBackground: '#0a0b0a',
   success100: '#a4f4e7',
   success200: '#15b097',
   success300: '#0b7b69',
@@ -73,8 +73,8 @@ export const AppColors = {
 
 export const AppColorsLight: typeof AppColors = {
   // Base
-  baseWhite: '#1a1a1a',
-  baseBlack: '#ffffff',
+  foreground: '#1a1a1a',
+  background: '#ffffff',
 
   // Primary
   primary: '#8b2635',
@@ -141,7 +141,7 @@ export const AppColorsLight: typeof AppColors = {
   pinkPink1000: '#5b0929',
 
   // Neutrals
-  neutralsBaseWhite: '#0f0f0f',
+  neutralsForeground: '#0f0f0f',
   neutrals100: '#6c6c6c',
   neutrals200: '#808080',
   neutrals300: '#9e9e9e',
@@ -152,7 +152,7 @@ export const AppColorsLight: typeof AppColors = {
   neutrals800: '#dddddd',
   neutrals900: '#f2f2f2',
   neutrals1000: '#f5f5f5',
-  neutralsBaseBlack: '#ffffff',
+  neutralsBackground: '#ffffff',
 
   // Error
   error: '#e4626f',

@@ -22,7 +22,7 @@ export default function SettingsScreen() {
           className="flex-row justify-between items-center py-4 px-4 bg-neutrals800 rounded-lg mb-2"
           onPress={handleToggleTheme}
         >
-          <Text className="text-base-white text-base font-sans-semibold">Theme</Text>
+          <Text className="text-foreground text-base font-sans-semibold">Theme</Text>
           <Text className="text-neutrals300 text-sm font-sans-regular">
             {theme === 'dark' ? 'Dark' : 'Light'}
           </Text>

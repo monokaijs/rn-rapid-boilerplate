@@ -227,8 +227,8 @@ The boilerplate includes a comprehensive color system with dark/light mode suppo
 export const AppColors = {
   // Primary brand colors
   primaryPrimary: '#e85a5a',        // Main brand color
-  baseBaseWhite: '#fafafa',         // Light background
-  baseBaseBlack: '#0a0b0a',         // Dark background
+  baseForeground: '#fafafa',         // Light background
+  baseBackground: '#0a0b0a',         // Dark background
 
   // Semantic colors
   successSuccess: '#a4f4e7',        // Success states
@@ -250,7 +250,7 @@ const MyComponent = () => {
   const colors = useColors(); // Automatically theme-aware
 
   return (
-    <View style={{ backgroundColor: colors.baseBaseBlack }}>
+    <View style={{ backgroundColor: colors.baseBackground }}>
       <Text style={{ color: colors.primaryPrimary }}>
         Themed content
       </Text>

@@ -12,7 +12,7 @@ export default function AppTextInput(props: AppTextInputProps) {
     onFocus={() => setFocused(true)}
     onBlur={() => setFocused(false)}
     className={cn(
-      'border border-neutrals800 rounded-lg px-4 py-2.5 text-base-white text-base font-sans-medium',
+      'border border-neutrals800 rounded-lg px-4 py-2.5 text-foreground text-base font-sans-medium',
       focused && 'border border-primary',
       props.className,
     )}

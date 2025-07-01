@@ -10,17 +10,17 @@ export default function CustomScreenHeader({navigation, route, options, back}: a
 
   return (
     <View
-      className={'bg-base-black px-4 py-3 pt-safe-offset-3 flex-row items-center border-b border-neutrals1000'}
+      className={'bg-background px-4 py-3 pt-safe-offset-3 flex-row items-center border-b border-neutrals1000'}
     >
       {back && (
         <TouchableOpacity
           onPress={navigation.goBack}
           style={{marginRight: 12}}
         >
-          <ChevronLeft size={24} color={colors.baseBaseWhite}/>
+          <ChevronLeft size={24} color={colors.baseForeground}/>
         </TouchableOpacity>
       )}
-      <Text className={'text-base-white text-lg font-sans-semibold'}>
+      <Text className={'text-foreground text-lg font-sans-semibold'}>
         {options.title || route.name}
       </Text>
     </View>
