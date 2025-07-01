@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, Dimensions } from 'react-native';
-import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useColors } from '@/hooks/useColors.ts';
-import { Home, Menu } from 'lucide-react-native';
+import {Dimensions, Text, TouchableOpacity, View} from 'react-native';
+import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {useColors} from '@/hooks/useColors.ts';
+import {Home, Menu} from 'lucide-react-native';
 
-const { width: screenWidth } = Dimensions.get('window');
+const {width: screenWidth} = Dimensions.get('window');
 
 interface TabIconProps {
   name: string;
@@ -13,22 +13,22 @@ interface TabIconProps {
   size: number;
 }
 
-const TabIcon: React.FC<TabIconProps> = ({ name, color, size }) => {
+const TabIcon: React.FC<TabIconProps> = ({name, color, size}) => {
   switch (name) {
     case 'Home':
-      return <Home size={size} color={color} fill={color} />;
+      return <Home size={size} color={color} fill={color}/>;
     case 'More':
-      return <Menu size={size} color={color} fill={color} />;
+      return <Menu size={size} color={color} fill={color}/>;
     default:
-      return <Home size={size} color={color} fill={color} />;
+      return <Home size={size} color={color} fill={color}/>;
   }
 };
 
 const CustomTabBar: React.FC<BottomTabBarProps> = ({
-  state,
-  descriptors,
-  navigation
-}) => {
+                                                     state,
+                                                     descriptors,
+                                                     navigation
+                                                   }) => {
   const colors = useColors();
   const insets = useSafeAreaInsets();
 
@@ -37,12 +37,12 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({
       className={'bg-background flex-row py-2 border-t border-neutrals900'}
     >
       {state.routes.map((route, index) => {
-        const { options } = descriptors[route.key];
+        const {options} = descriptors[route.key];
         const label = options.tabBarLabel !== undefined
           ? options.tabBarLabel
           : options.title !== undefined
-          ? options.title
-          : route.name;
+            ? options.title
+            : route.name;
 
         const isFocused = state.index === index;
 
@@ -66,19 +66,19 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({
         };
 
         const iconColor = isFocused
-          ? colors.primaryPrimary
-          : colors.neutralsNeutrals400;
+          ? colors.primary
+          : colors.neutrals400;
 
         const labelColor = isFocused
-          ? colors.primaryPrimary
-          : colors.neutralsNeutrals400;
+          ? colors.primary
+          : colors.neutrals400;
 
         return (
           <TouchableOpacity
             key={route.key}
             activeOpacity={.9}
             accessibilityRole="button"
-            accessibilityState={isFocused ? { selected: true } : {}}
+            accessibilityState={isFocused ? {selected: true} : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarButtonTestID}
             onPress={onPress}
