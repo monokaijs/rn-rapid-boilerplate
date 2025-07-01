@@ -1,4 +1,4 @@
-import {useColors} from "@/hooks";
+import {useColors} from "@/hooks/useColors.ts";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 import {Text, TouchableOpacity, View} from "react-native";
 import {ChevronLeft} from "lucide-react-native";
@@ -17,7 +17,7 @@ export default function CustomScreenHeader({navigation, route, options, back}: a
           onPress={navigation.goBack}
           style={{marginRight: 12}}
         >
-          <ChevronLeft size={24} color={colors.baseForeground}/>
+          <ChevronLeft size={24} color={colors.foreground}/>
         </TouchableOpacity>
       )}
       <Text className={'text-foreground text-lg font-sans-semibold'}>

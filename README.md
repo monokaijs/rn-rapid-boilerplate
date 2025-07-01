@@ -227,8 +227,8 @@ The boilerplate includes a comprehensive color system with dark/light mode suppo
 export const AppColors = {
   // Primary brand colors
   primaryPrimary: '#e85a5a',        // Main brand color
-  baseForeground: '#fafafa',         // Light background
-  baseBackground: '#0a0b0a',         // Dark background
+  background: '#fafafa',            // Background color
+  foreground: '#0a0b0a',            // Foreground color
 
   // Semantic colors
   successSuccess: '#a4f4e7',        // Success states

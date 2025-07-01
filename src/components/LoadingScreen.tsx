@@ -1,30 +1,12 @@
 import React from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
-import { AppColors } from '@/config/colors';
-import { getTextStyles } from '@/utils/getTextStyles';
-import { StyleSheet } from 'react-native';
+import {ActivityIndicator, Text, View} from 'react-native';
+import {AppColors} from '@/config/colors';
 
-const LoadingScreen: React.FC = () => {
+export default function LoadingScreen() {
   return (
-    <View style={styles.container}>
-      <ActivityIndicator size="large" color={AppColors.primaryPrimary} />
-      <Text style={styles.text}>Loading...</Text>
+    <View className={'flex-1 bg-background items-center justify-center'}>
+      <ActivityIndicator size="large" color={AppColors.primary}/>
+      <Text className={'text-foreground font-sans-regular mt-4'}>Loading...</Text>
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: AppColors.baseBackground,
-  },
-  text: {
-    ...getTextStyles('mobileFeatureStandard'),
-    color: AppColors.baseForeground,
-    marginTop: 16,
-  },
-});
-
-export default LoadingScreen;
+}
