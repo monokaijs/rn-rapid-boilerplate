@@ -78,7 +78,7 @@ const SelectDemoScreen: React.FC = () => {
         {/* Basic Select */}
         <View className="mb-8">
           <Text className="section-title mb-4">Basic Select</Text>
-          <View className="space-y-4">
+          <View className="gap-4">
             <Select
               label="Country"
               placeholder="Select a country"
@@ -147,7 +147,7 @@ const SelectDemoScreen: React.FC = () => {
           {/* User Profile Form */}
           <View className="bg-neutrals900 p-4 rounded-xl mb-4">
             <Text className="text-neutrals300 text-sm mb-4">User Profile Form</Text>
-            <View className="space-y-4">
+            <View className="gap-4">
               <Select
                 label="Country"
                 placeholder="Select your country"
@@ -170,7 +170,7 @@ const SelectDemoScreen: React.FC = () => {
           {/* Task Management */}
           <View className="bg-neutrals900 p-4 rounded-xl mb-4">
             <Text className="text-neutrals300 text-sm mb-4">Task Management</Text>
-            <View className="space-y-4">
+            <View className="gap-4">
               <Select
                 label="Priority Level"
                 placeholder="Set priority"
@@ -193,7 +193,7 @@ const SelectDemoScreen: React.FC = () => {
           {/* Filter Example */}
           <View className="bg-neutrals900 p-4 rounded-xl">
             <Text className="text-neutrals300 text-sm mb-4">Content Filters</Text>
-            <View className="space-y-4">
+            <View className="gap-4">
               <Select
                 label="Filter by Category"
                 placeholder="All categories"
@@ -219,7 +219,7 @@ const SelectDemoScreen: React.FC = () => {
         <View className="mb-8">
           <Text className="section-title mb-4">Current Selections</Text>
           <View className="bg-neutrals900 p-4 rounded-xl">
-            <View className="space-y-2">
+            <View className="gap-2">
               <Text className="text-neutrals300 text-sm">
                 Country: <Text className="text-foreground">{selectedCountry || 'None'}</Text>
               </Text>

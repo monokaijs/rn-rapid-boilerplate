@@ -148,7 +148,7 @@ const AvatarDemoScreen: React.FC = () => {
           {/* Team List */}
           <View className="bg-neutrals900 p-4 rounded-xl">
             <Text className="text-neutrals300 text-sm mb-2">Team Members</Text>
-            <View className="flex-row -space-x-2">
+            <View className="flex-row -gap-2">
               <Avatar text="Alice" size="md" variant="primary" />
               <Avatar text="Bob" size="md" variant="secondary" />
               <Avatar text="Charlie" size="md" />

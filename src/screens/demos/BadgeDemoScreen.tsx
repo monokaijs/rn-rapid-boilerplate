@@ -121,7 +121,7 @@ const BadgeDemoScreen: React.FC = () => {
           {/* Priority Levels */}
           <View className="bg-neutrals900 p-4 rounded-xl">
             <Text className="text-neutrals300 text-sm mb-3">Task Priority</Text>
-            <View className="space-y-3">
+            <View className="gap-3">
               <View className="flex-row items-center justify-between">
                 <Text className="text-foreground">Fix critical bug</Text>
                 <Badge variant="error">High</Badge>

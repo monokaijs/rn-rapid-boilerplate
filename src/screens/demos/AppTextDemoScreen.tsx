@@ -15,7 +15,7 @@ const AppTextDemoScreen: React.FC = () => {
         {/* Display Variants */}
         <View className="mb-8">
           <AppText variant="heading3" className="mb-4">Display Variants</AppText>
-          <View className="space-y-4">
+          <View className="gap-4">
             <AppText variant="display1">Display 1</AppText>
             <AppText variant="display2">Display 2</AppText>
             <AppText variant="display3">Display 3</AppText>
@@ -25,7 +25,7 @@ const AppTextDemoScreen: React.FC = () => {
         {/* Heading Variants */}
         <View className="mb-8">
           <AppText variant="heading3" className="mb-4">Heading Variants</AppText>
-          <View className="space-y-3">
+          <View className="gap-3">
             <AppText variant="heading1">Heading 1</AppText>
             <AppText variant="heading2">Heading 2</AppText>
             <AppText variant="heading3">Heading 3</AppText>
@@ -37,7 +37,7 @@ const AppTextDemoScreen: React.FC = () => {
         {/* Body Variants */}
         <View className="mb-8">
           <AppText variant="heading3" className="mb-4">Body Variants</AppText>
-          <View className="space-y-3">
+          <View className="gap-3">
             <AppText variant="bodyLarge">
               Body Large - This is larger body text for important paragraphs or introductions.
             </AppText>
@@ -53,7 +53,7 @@ const AppTextDemoScreen: React.FC = () => {
         {/* Label & Caption Variants */}
         <View className="mb-8">
           <AppText variant="heading3" className="mb-4">Label & Caption Variants</AppText>
-          <View className="space-y-3">
+          <View className="gap-3">
             <AppText variant="label">Label - Used for form labels and section titles</AppText>
             <AppText variant="labelSmall">Label Small - Smaller labels for compact UIs</AppText>
             <AppText variant="caption">Caption - Used for image captions and supplementary text</AppText>
@@ -64,7 +64,7 @@ const AppTextDemoScreen: React.FC = () => {
         {/* Font Weights */}
         <View className="mb-8">
           <AppText variant="heading3" className="mb-4">Font Weights</AppText>
-          <View className="space-y-3">
+          <View className="gap-3">
             <AppText variant="body" weight="regular">Regular weight text (400)</AppText>
             <AppText variant="body" weight="medium">Medium weight text (500)</AppText>
             <AppText variant="body" weight="semibold">Semibold weight text (600)</AppText>
@@ -75,7 +75,7 @@ const AppTextDemoScreen: React.FC = () => {
         {/* Text Colors */}
         <View className="mb-8">
           <AppText variant="heading3" className="mb-4">Text Colors</AppText>
-          <View className="space-y-3">
+          <View className="gap-3">
             <AppText variant="body" color="default">Default text color</AppText>
             <AppText variant="body" color="primary">Primary text color</AppText>
             <AppText variant="body" color="secondary">Secondary text color</AppText>
@@ -89,7 +89,7 @@ const AppTextDemoScreen: React.FC = () => {
         {/* Text Alignment */}
         <View className="mb-8">
           <AppText variant="heading3" className="mb-4">Text Alignment</AppText>
-          <View className="space-y-3">
+          <View className="gap-3">
             <AppText variant="body" align="left">Left aligned text (default)</AppText>
             <AppText variant="body" align="center">Center aligned text</AppText>
             <AppText variant="body" align="right">Right aligned text</AppText>

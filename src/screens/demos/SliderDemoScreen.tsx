@@ -23,7 +23,7 @@ const SliderDemoScreen: React.FC = () => {
         {/* Basic Sliders */}
         <View className="mb-8">
           <Text className="section-title mb-4">Basic Sliders</Text>
-          <View className="space-y-6">
+          <View className="gap-6">
             <Slider
               value={basicValue}
               onValueChange={setBasicValue}
@@ -53,7 +53,7 @@ const SliderDemoScreen: React.FC = () => {
         {/* Size Variants */}
         <View className="mb-8">
           <Text className="section-title mb-4">Size Variants</Text>
-          <View className="space-y-6">
+          <View className="gap-6">
             <Slider
               value={basicValue}
               onValueChange={setBasicValue}

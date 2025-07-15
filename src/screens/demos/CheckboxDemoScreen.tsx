@@ -61,7 +61,7 @@ const CheckboxDemoScreen: React.FC = () => {
         {/* Basic Checkboxes */}
         <View className="mb-8">
           <Text className="section-title mb-4">Basic Checkboxes</Text>
-          <View className="space-y-4">
+          <View className="gap-4">
             <Checkbox
               checked={basicCheckbox}
               onValueChange={setBasicCheckbox}
@@ -91,7 +91,7 @@ const CheckboxDemoScreen: React.FC = () => {
         {/* Size Variants */}
         <View className="mb-8">
           <Text className="section-title mb-4">Size Variants</Text>
-          <View className="space-y-4">
+          <View className="gap-4">
             <Checkbox
               checked={smallCheckbox}
               onValueChange={setSmallCheckbox}
@@ -116,7 +116,7 @@ const CheckboxDemoScreen: React.FC = () => {
         {/* Without Labels */}
         <View className="mb-8">
           <Text className="section-title mb-4">Without Labels</Text>
-          <View className="flex-row items-center space-x-4">
+          <View className="flex-row items-center gap-4">
             <Checkbox
               checked={basicCheckbox}
               onValueChange={setBasicCheckbox}
@@ -141,7 +141,7 @@ const CheckboxDemoScreen: React.FC = () => {
           {/* Todo List */}
           <View className="bg-neutrals900 p-4 rounded-xl mb-4">
             <Text className="text-neutrals300 text-sm mb-3">Todo List</Text>
-            <View className="space-y-3">
+            <View className="gap-3">
               {todos.map((todo) => (
                 <Checkbox
                   key={todo.id}
@@ -158,7 +158,7 @@ const CheckboxDemoScreen: React.FC = () => {
           {/* Settings */}
           <View className="bg-neutrals900 p-4 rounded-xl mb-4">
             <Text className="text-neutrals300 text-sm mb-3">App Settings</Text>
-            <View className="space-y-4">
+            <View className="gap-4">
               <Checkbox
                 checked={settings.notifications}
                 onValueChange={() => updateSetting('notifications')}
@@ -190,7 +190,7 @@ const CheckboxDemoScreen: React.FC = () => {
           {/* Permissions */}
           <View className="bg-neutrals900 p-4 rounded-xl mb-4">
             <Text className="text-neutrals300 text-sm mb-3">App Permissions</Text>
-            <View className="space-y-4">
+            <View className="gap-4">
               <Checkbox
                 checked={permissions.camera}
                 onValueChange={() => updatePermission('camera')}
@@ -227,7 +227,7 @@ const CheckboxDemoScreen: React.FC = () => {
           {/* Form Example */}
           <View className="bg-neutrals900 p-4 rounded-xl">
             <Text className="text-neutrals300 text-sm mb-3">Terms & Conditions</Text>
-            <View className="space-y-3">
+            <View className="gap-3">
               <Checkbox
                 checked={false}
                 onValueChange={() => {}}
