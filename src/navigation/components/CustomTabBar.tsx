@@ -1,7 +1,6 @@
 import React from 'react';
 import {Dimensions, Text, TouchableOpacity, View} from 'react-native';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useColors} from '@/hooks/useColors.ts';
 import {Home, Menu} from 'lucide-react-native';
 
@@ -30,11 +29,10 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({
                                                      navigation
                                                    }) => {
   const colors = useColors();
-  const insets = useSafeAreaInsets();
 
   return (
     <View
-      className={'bg-background flex-row py-2 border-t border-neutrals900'}
+      className={'bg-background flex-row py-2 border-t border-neutrals900 pb-safe-offset-0'}
     >
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];

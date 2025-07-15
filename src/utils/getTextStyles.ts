@@ -2,157 +2,157 @@ import {TextStyle} from 'react-native';
 
 export const textStyles = {
   // Mobile Styles
-  mobileDisplay1: {
-    fontFamily: 'SourceSans3-Bold', // Adjusted for bold weight
+  display1: {
+    fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 44,
     letterSpacing: 0,
   },
-  mobileDisplay2: {
+  display2: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 40,
     letterSpacing: 0,
   },
-  mobileDisplay3: {
+  display3: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 32,
     letterSpacing: 0,
   },
-  mobileHeading1: {
+  heading1: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 28,
     letterSpacing: 0,
   },
-  mobileHeading2: {
+  heading2: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 24,
     letterSpacing: 0,
   },
-  mobileHeading3: {
+  heading3: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 20,
     letterSpacing: 0,
   },
-  mobileHeading4: {
+  heading4: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 18,
     letterSpacing: 0,
   },
-  mobileHeading5: {
+  heading5: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 16,
     letterSpacing: 0,
   },
-  mobileFeatureBold: {
+  featureBold: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 18,
     letterSpacing: 0,
   },
-  mobileFeatureAccent: {
+  featureAccent: {
     fontFamily: 'SourceSans3-SemiBold', // Adjusted for 600 weight
     fontWeight: '600',
     fontSize: 18,
     letterSpacing: 0,
   },
-  mobileFeatureEmphasis: {
+  featureEmphasis: {
     fontFamily: 'SourceSans3-Italic', // Adjusted for italic style
     fontStyle: 'italic',
     fontSize: 18,
     letterSpacing: 0,
   },
-  mobileFeatureStandard: {
+  featureStandard: {
     fontFamily: 'SourceSans3-Regular', // Adjusted for normal weight
     fontWeight: 'normal',
     fontSize: 18,
     letterSpacing: 0,
   },
-  mobileHighlightBold: {
+  highlightBold: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 16,
     letterSpacing: 0,
   },
-  mobileHighlightAccent: {
+  highlightAccent: {
     fontFamily: 'SourceSans3-SemiBold',
     fontWeight: '600',
     fontSize: 16,
     letterSpacing: 0,
   },
-  mobileHighlightEmphasis: {
+  highlightEmphasis: {
     fontFamily: 'SourceSans3-Italic',
     fontStyle: 'italic',
     fontSize: 16,
     letterSpacing: 0,
   },
-  mobileHighlightStandard: {
+  highlightStandard: {
     fontFamily: 'SourceSans3-Regular',
     fontWeight: 'normal',
     fontSize: 16,
     letterSpacing: 0,
   },
-  mobileContentBold: {
+  contentBold: {
     fontFamily: 'SourceSans3-Bold',
     fontWeight: 'bold',
     fontSize: 14,
     letterSpacing: 0,
   },
-  mobileContentAccent: {
+  contentAccent: {
     fontFamily: 'SourceSans3-SemiBold',
     fontWeight: '600',
     fontSize: 14,
     letterSpacing: 0,
   },
-  mobileContentEmphasis: {
+  contentEmphasis: {
     fontFamily: 'SourceSans3-Italic',
     fontStyle: 'italic',
     fontSize: 14,
     letterSpacing: 0,
   },
-  mobileContentRegular: {
+  contentRegular: {
     fontFamily: 'SourceSans3-Regular',
     fontWeight: 'normal',
     fontSize: 14,
     letterSpacing: 0,
   },
-  mobileCaptionAccent: {
+  captionAccent: {
     fontFamily: 'SourceSans3-SemiBold',
     fontWeight: '600',
     fontSize: 12,
     letterSpacing: 0,
   },
-  mobileCaptionEmphasis: {
+  captionEmphasis: {
     fontFamily: 'SourceSans3-Italic',
     fontStyle: 'italic',
     fontSize: 12,
     letterSpacing: 0,
   },
-  mobileCaptionRegular: {
+  captionRegular: {
     fontFamily: 'SourceSans3-Regular',
     fontWeight: 'normal',
     fontSize: 12,
     letterSpacing: 0,
   },
-  mobileFootnoteAccent: {
+  footnoteAccent: {
     fontFamily: 'SourceSans3-SemiBold',
     fontWeight: '600',
     fontSize: 10,
     letterSpacing: 0,
   },
-  mobileFootnoteEmphasis: {
+  footnoteEmphasis: {
     fontFamily: 'SourceSans3-Italic',
     fontStyle: 'italic',
     fontSize: 10,
     letterSpacing: 0,
   },
-  mobileFootnoteRegular: {
+  footnoteRegular: {
     fontFamily: 'SourceSans3-Regular',
     fontWeight: 'normal',
     fontSize: 10,

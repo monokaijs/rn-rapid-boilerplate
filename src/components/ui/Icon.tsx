@@ -8,7 +8,6 @@ type IconProps = { name: IconName; className?: string }
 const Icon: React.FC<IconProps> = memo(({ name, className }) => {
   const CustomIcon = useMemo(() => {
     const Icon = icons[name]
-    Icon.displayName = name
 
     return cssInterop(Icon, {
       className: {

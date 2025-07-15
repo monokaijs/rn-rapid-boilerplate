@@ -9,6 +9,7 @@
     "generate-theme": "node scripts/generate-theme-files.js"
   },
   "dependencies": {
+    "@gorhom/bottom-sheet": "^5.1.6",
     "@react-native-cookies/cookies": "^6.2.1",
     "@react-native/new-app-screen": "0.80.0",
     "@react-navigation/bottom-tabs": "^7.4.2",

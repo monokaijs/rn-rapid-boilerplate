@@ -1,6 +1,7 @@
 import { JSX } from "react";
 import { Pressable, Text, View } from "react-native";
 import { ChevronRight } from "lucide-react-native";
+import Icon from "@/components/ui/Icon.tsx";
 
 interface MenuListItem {
   title: string;
@@ -20,9 +21,9 @@ export default function MenuList(props: MenuListProps) {
           <item.icon />
         </View>
         <Text className={'text-lg font-sans-regular text-foreground flex-1'}>{item.title}</Text>
-        <ChevronRight
-          size={22}
-          className={'text-neutral-600'}
+        <Icon
+          name={'ChevronRight'}
+          className={'text-neutrals600'}
         />
       </Pressable>
     ))}

@@ -5,6 +5,16 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 export type RootStackParamList = {
   Main: NavigatorScreenParams<MainTabParamList>;
   Settings: undefined;
+  ComponentsDemo: undefined;
+  AvatarDemo: undefined;
+  BadgeDemo: undefined;
+  ChipDemo: undefined;
+  CheckboxDemo: undefined;
+  ProgressBarDemo: undefined;
+  SliderDemo: undefined;
+  SwitchDemo: undefined;
+  SelectDemo: undefined;
+  AppTextDemo: undefined;
 };
 
 // Main Tab Navigator
