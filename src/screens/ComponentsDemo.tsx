@@ -13,6 +13,15 @@ const ComponentsDemo: React.FC<Props> = () => {
   // List of all UI components with their navigation routes
   const componentsList = [
     {
+      name: 'AppText',
+      description: 'Typography component with various text variants and styles',
+      route: 'AppTextDemo' as const,
+      icon: () => <Icon
+        name={'Type'}
+        className={"size-22 text-neutrals100"}
+      />,
+    },
+    {
       name: 'Avatar',
       description: 'Display user or content avatars with text, image, or icon',
       route: 'AvatarDemo' as const,
