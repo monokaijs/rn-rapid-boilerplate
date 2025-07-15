@@ -1,5 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { colorScheme } from "nativewind";
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {colorScheme} from "nativewind";
+import {LanguageCode} from '@/config/i18n';
+import {getDeviceLanguage} from "@/utils/getDeviceLanguage.ts";
 
 export type Theme = 'light' | 'dark';
 
@@ -10,8 +12,12 @@ export interface Insets {
   bottom: number;
 }
 
+// Get device language
+
+
 interface AppState {
   theme: Theme;
+  language: LanguageCode;
   insets: Insets;
   isFirstLaunch: boolean;
   isLoading: boolean;
@@ -19,6 +25,7 @@ interface AppState {
 
 const initialState: AppState = {
   theme: 'dark',
+  language: getDeviceLanguage(),
   insets: {
     left: 0,
     top: 0,
@@ -35,6 +42,9 @@ const appSlice = createSlice({
   reducers: {
     setTheme: (state, action: PayloadAction<Theme>) => {
       state.theme = action.payload;
+    },
+    setLanguage: (state, action: PayloadAction<LanguageCode>) => {
+      state.language = action.payload;
     },
     setInsets: (state, action: PayloadAction<Insets>) => {
       state.insets = action.payload;
@@ -53,5 +63,5 @@ const appSlice = createSlice({
   },
 });
 
-export const { setTheme, setInsets, setIsFirstLaunch, setIsLoading, toggleTheme } = appSlice.actions;
+export const {setTheme, setLanguage, setInsets, setIsFirstLaunch, setIsLoading, toggleTheme} = appSlice.actions;
 export default appSlice.reducer;

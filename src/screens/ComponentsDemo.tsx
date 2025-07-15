@@ -4,17 +4,17 @@ import {useNavigation} from '@react-navigation/native';
 import {RootStackScreenProps} from '@/navigation/types';
 import {MenuList} from "@/components/ui";
 import Icon from "@/components/ui/Icon.tsx";
+import {useTranslation} from "react-i18next";
 
 type Props = RootStackScreenProps<'ComponentsDemo'>;
 
 const ComponentsDemo: React.FC<Props> = () => {
   const navigation = useNavigation();
+  const { t } = useTranslation();
 
-  // List of all UI components with their navigation routes
   const componentsList = [
     {
-      name: 'AppText',
-      description: 'Typography component with various text variants and styles',
+      name: t('APP_TEXT'),
       route: 'AppTextDemo' as const,
       icon: () => <Icon
         name={'Type'}
@@ -22,8 +22,7 @@ const ComponentsDemo: React.FC<Props> = () => {
       />,
     },
     {
-      name: 'Avatar',
-      description: 'Display user or content avatars with text, image, or icon',
+      name: t('AVATAR'),
       route: 'AvatarDemo' as const,
       icon: () => <Icon
         name={'User'}
@@ -31,8 +30,7 @@ const ComponentsDemo: React.FC<Props> = () => {
       />,
     },
     {
-      name: 'Badge',
-      description: 'Small status indicators with various styles',
+      name: t('BADGE'),
       route: 'BadgeDemo' as const,
       icon: () => <Icon
         name={'Award'}
@@ -40,8 +38,7 @@ const ComponentsDemo: React.FC<Props> = () => {
       />,
     },
     {
-      name: 'Checkbox',
-      description: 'Interactive checkboxes with animations',
+      name: t('CHECKBOX'),
       route: 'CheckboxDemo' as const,
       icon: () => <Icon
         name={'Check'}
@@ -50,7 +47,6 @@ const ComponentsDemo: React.FC<Props> = () => {
     },
     {
       name: 'Chip',
-      description: 'Interactive tags with selection states',
       route: 'ChipDemo' as const,
       icon: () => <Icon
         name={'Tags'}
@@ -59,7 +55,6 @@ const ComponentsDemo: React.FC<Props> = () => {
     },
     {
       name: 'ProgressBar',
-      description: 'Animated progress indicators',
       route: 'ProgressBarDemo' as const,
       icon: () => <Icon
         name={'LoaderCircle'}
@@ -68,7 +63,6 @@ const ComponentsDemo: React.FC<Props> = () => {
     },
     {
       name: 'Select',
-      description: 'Dropdown selection with single and multiple modes',
       route: 'SelectDemo' as const,
       icon: () => <Icon
         name={'MousePointerClick'}
@@ -77,7 +71,6 @@ const ComponentsDemo: React.FC<Props> = () => {
     },
     {
       name: 'Slider',
-      description: 'Interactive sliders with gesture support',
       route: 'SliderDemo' as const,
       icon: () => <Icon
         name={'SlidersHorizontal'}
@@ -85,8 +78,7 @@ const ComponentsDemo: React.FC<Props> = () => {
       />,
     },
     {
-      name: 'Switch',
-      description: 'Toggle switches with animations',
+      name: t('SWITCH'),
       route: 'SwitchDemo' as const,
       icon: () => <Icon
         name={'ToggleRight'}
@@ -111,7 +103,6 @@ const ComponentsDemo: React.FC<Props> = () => {
           data={componentsList.map(c => ({
             icon: c.icon,
             title: c.name,
-            description: c.description,
             onPress: () => handleComponentPress(c.route),
           }))}
         />

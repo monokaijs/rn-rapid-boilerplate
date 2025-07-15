@@ -36,6 +36,7 @@ type SelectProps = {
   searchable?: boolean;
   multiple?: boolean;
   size?: 'sm' | 'md' | 'lg';
+  renderSelector?: React.ReactElement;
   className?: string;
   containerClassName?: string;
   labelClassName?: string;
@@ -127,6 +128,7 @@ export default function Select({
                                  errorClassName,
                                  required,
                                  maxHeight = 60,
+                                 renderSelector,
                                }: SelectProps) {
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -195,7 +197,7 @@ export default function Select({
     []
   );
 
-  const renderOption = ({item}: { item: SelectOption }) => {
+  const renderOption = ({item, index}: { item: SelectOption, index: number }) => {
     const itemSelected = isSelected(item.value);
 
     return (
@@ -205,7 +207,8 @@ export default function Select({
         className={cn(
           'flex-row items-center px-4 py-3 border-b border-neutrals900',
           item.disabled && 'opacity-50',
-          itemSelected && 'bg-primary/10 border-primary/10'
+          itemSelected && 'bg-primary/10 border-primary/10',
+          index === filteredOptions.length - 1 && 'border-b-0'
         )}
       >
         {multiple && (
@@ -246,51 +249,55 @@ export default function Select({
             {label}
           </Text>
         )}
+        {renderSelector ? React.cloneElement(renderSelector as any, {
+          onPress: handlePresentModalPress,
+          disabled,
+        }) : <>
+          <Pressable
+            onPress={handlePresentModalPress}
+            disabled={disabled}
+            className={cn(
+              selectVariants({size, state}),
+              className
+            )}
+          >
+            <Text
+              className={cn(
+                'flex-1 font-sans-medium',
+                selectedOptions.length > 0 ? 'text-foreground' : 'text-neutrals100'
+              )}
+              numberOfLines={1}
+              ellipsizeMode="tail"
+            >
+              {multiple
+                ? selectedOptions.length > 0
+                  ? selectedOptions.length === 1
+                    ? selectedOptions[0].label
+                    : `${selectedOptions[0].label} +${selectedOptions.length - 1} more`
+                  : placeholder
+                : selectedOptions.length > 0 ? selectedOptions[0].label : placeholder
+              }
+            </Text>
+            <Icon
+              name="ChevronDown"
+              className="w-5 h-5 text-neutrals100"
+            />
+          </Pressable>
 
-        <Pressable
-          onPress={handlePresentModalPress}
-          disabled={disabled}
-          className={cn(
-            selectVariants({size, state}),
-            className
+          {(helperText || errorText) && (
+            <Text
+              className={cn(
+                helperVariants({
+                  type: hasError ? 'error' : 'helper',
+                  size,
+                }),
+                hasError ? errorClassName : helperClassName
+              )}
+            >
+              {errorText || helperText}
+            </Text>
           )}
-        >
-          <Text
-            className={cn(
-              'flex-1 font-sans-medium',
-              selectedOptions.length > 0 ? 'text-foreground' : 'text-neutrals100'
-            )}
-            numberOfLines={1}
-            ellipsizeMode="tail"
-          >
-            {multiple
-              ? selectedOptions.length > 0
-                ? selectedOptions.length === 1
-                  ? selectedOptions[0].label
-                  : `${selectedOptions[0].label} +${selectedOptions.length - 1} more`
-                : placeholder
-              : selectedOptions.length > 0 ? selectedOptions[0].label : placeholder
-            }
-          </Text>
-          <Icon
-            name="ChevronDown"
-            className="w-5 h-5 text-neutrals100"
-          />
-        </Pressable>
-
-        {(helperText || errorText) && (
-          <Text
-            className={cn(
-              helperVariants({
-                type: hasError ? 'error' : 'helper',
-                size,
-              }),
-              hasError ? errorClassName : helperClassName
-            )}
-          >
-            {errorText || helperText}
-          </Text>
-        )}
+        </>}
       </View>
 
       <BottomSheetModal

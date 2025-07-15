@@ -1,17 +1,12 @@
 import React from "react";
 import {Text, View} from "react-native";
 import {useNavigation} from "@react-navigation/native";
-import {MainTabScreenProps} from "@/navigation/types";
-import {useColors} from "@/hooks/useColors";
-import {Settings} from "lucide-react-native";
 import MenuList from "@/components/ui/MenuList.tsx";
 import Icon from "@/components/ui/Icon.tsx";
-import {Avatar} from "@/components/ui";
+import {AppText, Avatar} from "@/components/ui";
 
-type Props = MainTabScreenProps<"More">;
 
-const MoreScreen: React.FC<Props> = () => {
-  const colors = useColors();
+const MoreScreen = () => {
   const navigation = useNavigation();
 
   const handleSettings = () => {
@@ -24,7 +19,9 @@ const MoreScreen: React.FC<Props> = () => {
 
   return (
     <View className='flex-1 p-4 pt-safe-offset-4'>
-      <Text className={"screen-title"}>More</Text>
+      <AppText variant={'heading1'}>
+        MORE
+      </AppText>
 
       <View className={'bg-neutrals1000 flex flex-row p-4 rounded-3xl'}>
         <Avatar

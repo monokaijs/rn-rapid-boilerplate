@@ -15,7 +15,7 @@ const SliderDemoScreen: React.FC = () => {
     <ScrollView className="flex-1 bg-background">
       <View className="p-4">
         <Text className="text-foreground text-2xl font-sans-bold mb-6">Slider Component</Text>
-        
+
         <Text className="text-neutrals400 mb-4">
           Slider component with gesture-based value changes, customizable appearance, and smooth animations.
         </Text>
@@ -25,24 +25,20 @@ const SliderDemoScreen: React.FC = () => {
           <Text className="section-title mb-4">Basic Sliders</Text>
           <View className="gap-6">
             <Slider
-              value={basicValue}
-              onValueChange={setBasicValue}
+              value={25}
               label="Basic Slider"
               showValue
             />
-            
+
             <Slider
-              value={basicValue}
-              onValueChange={setBasicValue}
               label="With Custom Range"
               minimumValue={-50}
               maximumValue={50}
               showValue
             />
-            
+
             <Slider
-              value={basicValue}
-              onValueChange={setBasicValue}
+              value={30}
               label="With Step (10)"
               step={10}
               showValue
@@ -61,7 +57,7 @@ const SliderDemoScreen: React.FC = () => {
               size="sm"
               showValue
             />
-            
+
             <Slider
               value={basicValue}
               onValueChange={setBasicValue}
@@ -69,7 +65,7 @@ const SliderDemoScreen: React.FC = () => {
               size="md"
               showValue
             />
-            
+
             <Slider
               value={basicValue}
               onValueChange={setBasicValue}
@@ -95,7 +91,7 @@ const SliderDemoScreen: React.FC = () => {
         {/* Usage Examples */}
         <View className="mb-8">
           <Text className="section-title mb-4">Usage Examples</Text>
-          
+
           {/* Volume Control */}
           <View className="bg-neutrals900 p-4 rounded-xl mb-4">
             <Text className="text-neutrals300 text-sm mb-3">Volume Control</Text>
@@ -204,7 +200,7 @@ const SliderDemoScreen: React.FC = () => {
               label="Layer Opacity"
               showValue
             />
-            <View 
+            <View
               className="h-20 bg-primary rounded-lg mt-3"
               style={{ opacity: opacityValue / 100 }}
             />

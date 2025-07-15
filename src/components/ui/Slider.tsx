@@ -1,20 +1,20 @@
-import React, { useCallback } from 'react';
-import { View, Text } from 'react-native';
-import { PanGestureHandler, PanGestureHandlerGestureEvent } from 'react-native-gesture-handler';
+import React, {useCallback, useEffect, useState} from 'react';
+import {Text, View} from 'react-native';
+import {PanGestureHandler, PanGestureHandlerGestureEvent} from 'react-native-gesture-handler';
 import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  useAnimatedGestureHandler,
-  runOnJS,
-  interpolate,
   Extrapolate,
+  interpolate,
+  runOnJS,
+  useAnimatedGestureHandler,
+  useAnimatedStyle,
+  useSharedValue,
 } from 'react-native-reanimated';
-import { cn } from '@/utils';
-import { cva } from 'class-variance-authority';
+import {cn} from '@/utils';
+import {cva} from 'class-variance-authority';
 
 interface SliderProps {
-  value: number;
-  onValueChange: (value: number) => void;
+  value?: number;
+  onValueChange?: (value: number) => void;
   minimumValue?: number;
   maximumValue?: number;
   step?: number;
@@ -99,21 +99,22 @@ const thumbVariants = cva(
 );
 
 export default function Slider({
-  value,
-  onValueChange,
-  minimumValue = 0,
-  maximumValue = 100,
-  step = 1,
-  disabled = false,
-  showValue = false,
-  size = 'md',
-  className,
-  trackClassName,
-  thumbClassName,
-  fillClassName,
-  label,
-  labelClassName,
-}: SliderProps) {
+                                 value,
+                                 onValueChange,
+                                 minimumValue = 0,
+                                 maximumValue = 100,
+                                 step = 1,
+                                 disabled = false,
+                                 showValue = false,
+                                 size = 'md',
+                                 className,
+                                 trackClassName,
+                                 thumbClassName,
+                                 fillClassName,
+                                 label,
+                                 labelClassName,
+                               }: SliderProps) {
+  const [sliderValue, setSliderValue] = useState<number>(value ?? 0);
   const scale = useSharedValue(1);
   const sliderWidth = useSharedValue(0);
 
@@ -121,7 +122,8 @@ export default function Slider({
     (newValue: number) => {
       const clampedValue = Math.max(minimumValue, Math.min(maximumValue, newValue));
       const steppedValue = Math.round(clampedValue / step) * step;
-      onValueChange(steppedValue);
+      onValueChange?.(steppedValue);
+      setSliderValue(steppedValue);
     },
     [minimumValue, maximumValue, step, onValueChange]
   );
@@ -144,7 +146,7 @@ export default function Slider({
 
   const thumbAnimatedStyle = useAnimatedStyle(() => {
     const thumbSize = size === 'sm' ? 16 : size === 'md' ? 20 : 24;
-    const progress = (value - minimumValue) / (maximumValue - minimumValue);
+    const progress = (sliderValue - minimumValue) / (maximumValue - minimumValue);
 
     const translateValue = interpolate(
       progress,
@@ -155,18 +157,22 @@ export default function Slider({
 
     return {
       transform: [
-        { translateX: translateValue },
-        { scale: scale.value },
+        {translateX: translateValue},
+        {scale: scale.value},
       ],
     };
   });
 
   const fillAnimatedStyle = useAnimatedStyle(() => {
-    const progress = (value - minimumValue) / (maximumValue - minimumValue);
+    const progress = (sliderValue - minimumValue) / (maximumValue - minimumValue);
     return {
       width: `${progress * 100}%`,
     };
   });
+
+  useEffect(() => {
+    setSliderValue(value ?? 0);
+  }, [value]);
 
   return (
     <View className={cn('w-full', className)}>
@@ -179,32 +185,32 @@ export default function Slider({
       <View className="flex-row items-center">
         <PanGestureHandler onGestureEvent={gestureHandler} enabled={!disabled}>
           <Animated.View
-            className={cn(sliderVariants({ size, disabled }))}
-            style={{ flex: 1 }}
+            className={cn(sliderVariants({size, disabled}))}
+            style={{flex: 1}}
             onLayout={(event) => {
               sliderWidth.value = event.nativeEvent.layout.width;
             }}
           >
             {/* Track */}
-            <View className={cn(trackVariants({ size }), trackClassName)} />
+            <View className={cn(trackVariants({size}), trackClassName)}/>
 
             {/* Fill */}
             <Animated.View
               style={fillAnimatedStyle}
-              className={cn(fillVariants({ size }), fillClassName)}
+              className={cn(fillVariants({size}), fillClassName)}
             />
 
             {/* Thumb */}
             <Animated.View
               style={thumbAnimatedStyle}
-              className={cn(thumbVariants({ size }), thumbClassName)}
+              className={cn(thumbVariants({size}), thumbClassName)}
             />
           </Animated.View>
         </PanGestureHandler>
 
         {showValue && (
           <Text className="text-foreground font-sans-medium ml-3 min-w-12 text-right">
-            {value}
+            {sliderValue}
           </Text>
         )}
       </View>

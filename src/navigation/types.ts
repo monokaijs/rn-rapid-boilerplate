@@ -19,8 +19,8 @@ export type RootStackParamList = {
 
 // Main Tab Navigator
 export type MainTabParamList = {
-  Home: undefined;
-  More: undefined;
+  HOME: undefined;
+  MORE: undefined;
 };
 
 // Screen props types

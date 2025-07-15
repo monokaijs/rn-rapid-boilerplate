@@ -1,4 +1,5 @@
 import "@/config/global.css"
+import "@/config/i18n"; // Initialize i18n
 import React from 'react';
 import {StatusBar, View} from 'react-native';
 import {Provider} from 'react-redux';
@@ -13,6 +14,8 @@ import {useColors} from "@/hooks/useColors";
 import InsetsHelper from "@/components/helpers/InsetsHelper.tsx";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
 import {BottomSheetModalProvider} from "@gorhom/bottom-sheet";
+import {LanguageHelper} from "@/components/helpers/LanguageHelper.tsx";
+import '@/config/i18n.ts'
 
 
 const AppContent: React.FC = () => {
@@ -44,6 +47,7 @@ const AppContent: React.FC = () => {
           <BottomSheetModalProvider>
             <SafeAreaProvider>
               <InsetsHelper/>
+              <LanguageHelper/>
               <RootStackNavigator/>
             </SafeAreaProvider>
           </BottomSheetModalProvider>

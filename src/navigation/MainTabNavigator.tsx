@@ -16,17 +16,17 @@ const MainTabNavigator: React.FC = () => {
       }}
     >
       <Tab.Screen
-        name="Home"
+        name="HOME"
         component={HomeScreen}
         options={{
-          title: "Home",
+          title: "HOME",
         }}
       />
       <Tab.Screen
-        name="More"
+        name="MORE"
         component={MoreScreen}
         options={{
-          title: "More",
+          title: "MORE",
         }}
       />
     </Tab.Navigator>

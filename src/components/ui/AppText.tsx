@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, TextProps} from 'react-native';
 import {cn} from '@/utils';
 import {cva} from 'class-variance-authority';
+import {useTranslation} from "react-i18next";
 
 interface AppTextProps extends TextProps {
   variant?:
@@ -24,6 +25,7 @@ interface AppTextProps extends TextProps {
   color?: 'default' | 'primary' | 'secondary' | 'muted' | 'success' | 'warning' | 'error';
   align?: 'left' | 'center' | 'right';
   children: React.ReactNode;
+  raw?: boolean;
   className?: string;
 }
 
@@ -43,7 +45,7 @@ const textVariants = cva(
         body: 'text-base leading-normal',
         bodyLarge: 'text-lg leading-normal',
         bodySmall: 'text-sm leading-normal',
-        caption: 'text-xs leading-normal',
+        caption: 'text-lg leading-normal',
         overline: 'text-xs leading-normal uppercase tracking-wide',
         label: 'text-sm leading-normal',
         labelSmall: 'text-xs leading-normal',
@@ -87,13 +89,17 @@ export default function AppText({
                                   className,
                                   ...props
                                 }: AppTextProps) {
+  const {t} = useTranslation();
   let computedClassName = textVariants({variant, weight, color, align});
+  if (!props.raw && typeof children === 'string') {
+    children = t((children as string).toString().trim());
+  }
 
   if (!weight) {
     if (['display1', 'display2', 'display3'].includes(variant)) {
       computedClassName = cn(computedClassName, 'font-sans-bold');
     } else if (['heading1', 'heading2', 'heading3', 'heading4', 'heading5'].includes(variant)) {
-      computedClassName = cn(computedClassName, 'font-sans-semibold');
+      computedClassName = cn(computedClassName, 'font-sans-bold');
     } else if (['label', 'labelSmall'].includes(variant)) {
       computedClassName = cn(computedClassName, 'font-sans-medium');
     } else if (variant === 'overline') {
@@ -103,8 +109,8 @@ export default function AppText({
 
   return (
     <Text
-      className={cn(computedClassName, className)}
       {...props}
+      className={cn(computedClassName, className)}
     >
       {children}
     </Text>
