@@ -1,3 +1,4 @@
+@import "custom.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -79,80 +80,6 @@
 
 .dark {
   /* Dark theme colors */
-  --color-foreground: 140 22 22; /* #8c1616 */
-  --color-background: 10 11 10; /* #0a0b0a */
-  --color-primary: 232 90 90; /* #e85a5a */
-  --color-secondary: 170 185 197; /* #aab9c5 */
-  --color-success: 164 244 231; /* #a4f4e7 */
-  --color-warning: 244 199 144; /* #f4c790 */
-  --color-error: 228 98 111; /* #e4626f */
-  --color-green: 47 164 80; /* #2fa450 */
-  --color-pink: 239 84 145; /* #ef5491 */
-  --color-primary100: 253 242 242; /* #fdf2f2 */
-  --color-primary200: 252 232 232; /* #fce8e8 */
-  --color-primary300: 248 209 209; /* #f8d1d1 */
-  --color-primary400: 244 180 180; /* #f4b4b4 */
-  --color-primary500: 239 135 135; /* #ef8787 */
-  --color-primary600: 232 90 90; /* #e85a5a */
-  --color-primary700: 215 62 62; /* #d73e3e */
-  --color-primary800: 184 50 50; /* #b83232 */
-  --color-primary900: 154 39 39; /* #9a2727 */
-  --color-primary1000: 124 29 29; /* #7c1d1d */
-  --color-secondary100: 231 235 239; /* #e7ebef */
-  --color-secondary200: 218 225 231; /* #dae1e7 */
-  --color-secondary300: 206 215 222; /* #ced7de */
-  --color-secondary400: 194 205 214; /* #c2cdd6 */
-  --color-secondary500: 182 195 205; /* #b6c3cd */
-  --color-secondary600: 146 165 181; /* #92a5b5 */
-  --color-secondary700: 121 145 164; /* #7991a4 */
-  --color-secondary800: 99 125 146; /* #637d92 */
-  --color-secondary900: 74 94 109; /* #4a5e6d */
-  --color-secondary1000: 50 63 73; /* #323f49 */
-  --color-neutrals-foreground: 250 250 250; /* #fafafa */
-  --color-neutrals100: 148 148 148; /* #949494 */
-  --color-neutrals200: 133 133 133; /* #858585 */
-  --color-neutrals300: 122 122 122; /* #7a7a7a */
-  --color-neutrals400: 110 110 110; /* #6e6e6e */
-  --color-neutrals500: 94 94 94; /* #5e5e5e */
-  --color-neutrals600: 77 77 77; /* #4d4d4d */
-  --color-neutrals700: 65 66 64; /* #414240 */
-  --color-neutrals800: 29 29 29; /* #1d1d1d */
-  --color-neutrals900: 28 28 28; /* #1c1c1c */
-  --color-neutrals1000: 17 17 17; /* #111111 */
-  --color-neutrals-background: 10 11 10; /* #0a0b0a */
-  --color-success100: 164 244 231; /* #a4f4e7 */
-  --color-success200: 21 176 151; /* #15b097 */
-  --color-success300: 11 123 105; /* #0b7b69 */
-  --color-warning100: 244 199 144; /* #f4c790 */
-  --color-warning200: 237 161 69; /* #eda145 */
-  --color-warning300: 204 121 20; /* #cc7914 */
-  --color-error100: 228 98 111; /* #e4626f */
-  --color-error200: 192 55 68; /* #c03744 */
-  --color-error300: 140 24 35; /* #8c1823 */
-  --color-green100: 222 245 228; /* #def5e4 */
-  --color-green200: 189 236 202; /* #bdecca */
-  --color-green300: 155 226 175; /* #9be2af */
-  --color-green400: 122 217 149; /* #7ad995 */
-  --color-green500: 89 207 122; /* #59cf7a */
-  --color-green600: 57 197 96; /* #39c560 */
-  --color-green700: 40 140 68; /* #288c44 */
-  --color-green800: 33 116 57; /* #217439 */
-  --color-green900: 26 92 45; /* #1a5c2d */
-  --color-green1000: 19 68 33; /* #134421 */
-  --color-pink100: 252 221 233; /* #fcdde9 */
-  --color-pink200: 249 187 211; /* #f9bbd3 */
-  --color-pink300: 245 152 189; /* #f598bd */
-  --color-pink400: 242 118 167; /* #f276a7 */
-  --color-pink500: 236 50 123; /* #ec327b */
-  --color-pink600: 227 21 102; /* #e31566 */
-  --color-pink700: 193 18 87; /* #c11257 */
-  --color-pink800: 159 15 72; /* #9f0f48 */
-  --color-pink900: 125 12 56; /* #7d0c38 */
-  --color-pink1000: 91 9 41; /* #5b0929 */
-}
-
-.dark {
-  /* Dark theme colors */
   --color-foreground: 250 250 250; /* #fafafa */
   --color-background: 10 11 10; /* #0a0b0a */
   --color-primary: 232 90 90; /* #e85a5a */
@@ -223,16 +150,4 @@
   --color-pink800: 159 15 72; /* #9f0f48 */
   --color-pink900: 125 12 56; /* #7d0c38 */
   --color-pink1000: 91 9 41; /* #5b0929 */
-}
-
-.screen-title {
-  @apply text-foreground text-4xl font-sans-bold;
-}
-
-.screen-subtitle {
-  @apply text-neutral-400 text-lg font-sans-regular leading-tight;
-}
-
-.section-title {
-  @apply text-foreground text-lg font-bold font-sans-regular;
 }
