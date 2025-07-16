@@ -17,6 +17,14 @@ const MoreScreen = () => {
     navigation.navigate("ComponentsDemo");
   };
 
+  const handleLogin = () => {
+    navigation.navigate("Login");
+  };
+
+  const handleRegister = () => {
+    navigation.navigate("Register");
+  };
+
   return (
     <View className='flex-1 p-4 pt-safe-offset-4'>
       <AppText variant={'heading1'}>
@@ -57,6 +65,22 @@ const MoreScreen = () => {
             />,
             title: "Components Demo",
             onPress: handleComponentsDemo
+          },
+          {
+            icon: () => <Icon
+              name={'LogIn'}
+              className={"size-22 text-neutrals100"}
+            />,
+            title: "Login Demo",
+            onPress: handleLogin
+          },
+          {
+            icon: () => <Icon
+              name={'UserPlus'}
+              className={"size-22 text-neutrals100"}
+            />,
+            title: "Register Demo",
+            onPress: handleRegister
           }
         ]}
       />

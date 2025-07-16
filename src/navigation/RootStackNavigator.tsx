@@ -17,11 +17,19 @@ import SwitchDemoScreen from "@/screens/demos/SwitchDemoScreen";
 import SelectDemoScreen from "@/screens/demos/SelectDemoScreen";
 import AppTextDemoScreen from "@/screens/demos/AppTextDemoScreen";
 
+// Auth Screens
+import LoginScreen from "@/screens/auth/LoginScreen";
+import RegisterScreen from "@/screens/auth/RegisterScreen";
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function RootStackNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        header: (props) => <CustomScreenHeader {...props} />,
+      }}
+    >
       <Stack.Screen
         name="Main"
         component={MainTabNavigator}
@@ -34,7 +42,6 @@ export default function RootStackNavigator() {
         component={SettingsScreen}
         options={{
           title: "Settings",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -42,7 +49,6 @@ export default function RootStackNavigator() {
         component={ComponentsDemo}
         options={{
           title: "Components Demo",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -50,7 +56,6 @@ export default function RootStackNavigator() {
         component={AvatarDemoScreen}
         options={{
           title: "Avatar Component",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -58,7 +63,6 @@ export default function RootStackNavigator() {
         component={BadgeDemoScreen}
         options={{
           title: "Badge Component",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -66,7 +70,6 @@ export default function RootStackNavigator() {
         component={ChipDemoScreen}
         options={{
           title: "Chip Component",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -74,7 +77,6 @@ export default function RootStackNavigator() {
         component={CheckboxDemoScreen}
         options={{
           title: "Checkbox Component",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -82,7 +84,6 @@ export default function RootStackNavigator() {
         component={ProgressBarDemoScreen}
         options={{
           title: "ProgressBar Component",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -90,7 +91,6 @@ export default function RootStackNavigator() {
         component={SliderDemoScreen}
         options={{
           title: "Slider Component",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -98,7 +98,6 @@ export default function RootStackNavigator() {
         component={SwitchDemoScreen}
         options={{
           title: "Switch Component",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -106,7 +105,6 @@ export default function RootStackNavigator() {
         component={SelectDemoScreen}
         options={{
           title: "Select Component",
-          header: (props) => <CustomScreenHeader {...props} />,
         }}
       />
       <Stack.Screen
@@ -114,7 +112,20 @@ export default function RootStackNavigator() {
         component={AppTextDemoScreen}
         options={{
           title: "Typography",
-          header: (props) => <CustomScreenHeader {...props} />,
+        }}
+      />
+      <Stack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{
+          title: "Login",
+        }}
+      />
+      <Stack.Screen
+        name="Register"
+        component={RegisterScreen}
+        options={{
+          title: "Register",
         }}
       />
     </Stack.Navigator>

@@ -1,20 +1,20 @@
 import React, {useEffect, useState} from 'react';
-import { Pressable, Text, View } from 'react-native';
+import {Pressable, Text} from 'react-native';
 import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming,
-  interpolate,
   Extrapolate,
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
 } from 'react-native-reanimated';
-import { cn } from '@/utils';
-import { cva } from 'class-variance-authority';
-import { Check } from 'lucide-react-native';
+import {cn} from '@/utils';
+import {cva} from 'class-variance-authority';
+import {Check} from 'lucide-react-native';
 
 interface CheckboxProps {
   checked?: boolean;
   onValueChange?: (checked: boolean) => void;
-  label?: string;
+  label?: string | React.ReactElement;
   disabled?: boolean;
   size?: 'sm' | 'md' | 'lg';
   variant?: 'default' | 'primary';
@@ -93,22 +93,22 @@ const labelVariants = cva(
 );
 
 export default function Checkbox({
-  checked,
-  onValueChange,
-  label,
-  disabled = false,
-  size = 'md',
-  variant = 'default',
-  className,
-  boxClassName,
-  labelClassName,
-}: CheckboxProps) {
+                                   checked,
+                                   onValueChange,
+                                   label,
+                                   disabled = false,
+                                   size = 'md',
+                                   variant = 'default',
+                                   className,
+                                   boxClassName,
+                                   labelClassName,
+                                 }: CheckboxProps) {
   const scale = useSharedValue(1);
   const [isChecked, setIsChecked] = useState(checked);
   const progress = useSharedValue(isChecked ? 1 : 0);
 
   useEffect(() => {
-    progress.value = withTiming(isChecked ? 1 : 0, { duration: 150 });
+    progress.value = withTiming(isChecked ? 1 : 0, {duration: 150});
   }, [isChecked, progress]);
 
   useEffect(() => {
@@ -126,21 +126,21 @@ export default function Checkbox({
 
     return {
       opacity,
-      transform: [{ scale: checkScale }],
+      transform: [{scale: checkScale}],
     };
   });
 
   const boxAnimatedStyle = useAnimatedStyle(() => {
     return {
-      transform: [{ scale: scale.value }],
+      transform: [{scale: scale.value}],
     };
   });
 
   const handlePress = () => {
     if (disabled) return;
 
-    scale.value = withTiming(0.9, { duration: 100 }, () => {
-      scale.value = withTiming(1, { duration: 100 });
+    scale.value = withTiming(0.9, {duration: 100}, () => {
+      scale.value = withTiming(1, {duration: 100});
     });
 
     onValueChange?.(!isChecked);
@@ -149,10 +149,14 @@ export default function Checkbox({
 
   const getCheckSize = () => {
     switch (size) {
-      case 'sm': return 12;
-      case 'md': return 16;
-      case 'lg': return 20;
-      default: return 16;
+      case 'sm':
+        return 12;
+      case 'md':
+        return 16;
+      case 'lg':
+        return 20;
+      default:
+        return 16;
     }
   };
 
@@ -161,35 +165,35 @@ export default function Checkbox({
       onPress={handlePress}
       disabled={disabled}
       className={cn(
-        checkboxContainerVariants({ disabled }),
+        checkboxContainerVariants({disabled}),
         className
       )}
       accessibilityRole="checkbox"
-      accessibilityState={{ checked, disabled }}
+      accessibilityState={{checked, disabled}}
     >
       <Animated.View
         style={boxAnimatedStyle}
         className={cn(
-          checkboxVariants({ size, variant, checked: isChecked }),
+          checkboxVariants({size, variant, checked: isChecked}),
           boxClassName
         )}
       >
         <Animated.View style={animatedStyle}>
-          <Check size={getCheckSize()} color="#ffffff" strokeWidth={3} />
+          <Check size={getCheckSize()} color="#ffffff" strokeWidth={3}/>
         </Animated.View>
       </Animated.View>
 
-      {label && (
+      {label && (typeof label === 'string' ? (
         <Text
           className={cn(
-            labelVariants({ size }),
+            labelVariants({size}),
             'text-foreground',
             labelClassName
           )}
         >
           {label}
         </Text>
-      )}
+      ): label)}
     </Pressable>
   );
 }

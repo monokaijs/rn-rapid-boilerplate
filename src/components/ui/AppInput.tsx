@@ -2,6 +2,7 @@ import React, {forwardRef, useState} from 'react';
 import {Text, TextInput, TextInputProps, View} from 'react-native';
 import {cn} from '@/utils';
 import {cva} from 'class-variance-authority';
+import {useColors} from "@/hooks/useColors.ts";
 
 interface AppInputProps extends TextInputProps {
   label?: string;
@@ -114,6 +115,7 @@ const AppInput = forwardRef<TextInput, AppInputProps>(
     const [focused, setFocused] = useState(false);
     const hasError = !!errorText;
     const state = hasError ? 'error' : focused ? 'focused' : 'default';
+    const colors = useColors();
 
     return (
       <View className={cn('w-full', containerClassName)}>
@@ -144,6 +146,7 @@ const AppInput = forwardRef<TextInput, AppInputProps>(
               setFocused(true);
               props.onFocus?.(e);
             }}
+            placeholderTextColor={colors.neutrals600}
             onBlur={(e) => {
               setFocused(false);
               props.onBlur?.(e);
