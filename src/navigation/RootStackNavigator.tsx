@@ -7,6 +7,7 @@ import ComponentsDemo from "@/screens/ComponentsDemo";
 import CustomScreenHeader from "@/navigation/components/ScreenHeader.tsx";
 
 // Component Demo Screens
+import AppButtonDemoScreen from "@/screens/demos/AppButtonDemoScreen";
 import AvatarDemoScreen from "@/screens/demos/AvatarDemoScreen";
 import BadgeDemoScreen from "@/screens/demos/BadgeDemoScreen";
 import ChipDemoScreen from "@/screens/demos/ChipDemoScreen";
@@ -52,6 +53,13 @@ export default function RootStackNavigator() {
         }}
       />
       <Stack.Screen
+        name="AppButtonDemo"
+        component={AppButtonDemoScreen}
+        options={{
+          title: "Button Component",
+        }}
+      />
+      <Stack.Screen
         name="AvatarDemo"
         component={AvatarDemoScreen}
         options={{
@@ -83,7 +91,7 @@ export default function RootStackNavigator() {
         name="ProgressBarDemo"
         component={ProgressBarDemoScreen}
         options={{
-          title: "ProgressBar Component",
+          title: "Progress Bar Component",
         }}
       />
       <Stack.Screen

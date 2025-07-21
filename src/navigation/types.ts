@@ -11,6 +11,7 @@ export type RootStackParamList = {
   ChipDemo: undefined;
   CheckboxDemo: undefined;
   ProgressBarDemo: undefined;
+  AppButtonDemo: undefined;
   SliderDemo: undefined;
   SwitchDemo: undefined;
   SelectDemo: undefined;

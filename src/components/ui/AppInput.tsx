@@ -3,6 +3,12 @@ import {Text, TextInput, TextInputProps, View} from 'react-native';
 import {cn} from '@/utils';
 import {cva} from 'class-variance-authority';
 import {useColors} from "@/hooks/useColors.ts";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+  withTiming,
+} from 'react-native-reanimated';
 
 interface AppInputProps extends TextInputProps {
   label?: string;
@@ -117,6 +123,36 @@ const AppInput = forwardRef<TextInput, AppInputProps>(
     const state = hasError ? 'error' : focused ? 'focused' : 'default';
     const colors = useColors();
 
+    // Animation values
+    const scale = useSharedValue(1);
+    const borderOpacity = useSharedValue(0);
+
+    const animatedStyle = useAnimatedStyle(() => {
+      return {
+        transform: [{ scale: scale.value }],
+      };
+    });
+
+    const borderAnimatedStyle = useAnimatedStyle(() => {
+      return {
+        opacity: borderOpacity.value,
+      };
+    });
+
+    const handleFocus = (e: any) => {
+      setFocused(true);
+      scale.value = withSpring(1.02, { damping: 15, stiffness: 300 });
+      borderOpacity.value = withTiming(1, { duration: 200 });
+      props.onFocus?.(e);
+    };
+
+    const handleBlur = (e: any) => {
+      setFocused(false);
+      scale.value = withSpring(1, { damping: 15, stiffness: 300 });
+      borderOpacity.value = withTiming(0, { duration: 200 });
+      props.onBlur?.(e);
+    };
+
     return (
       <View className={cn('w-full', containerClassName)}>
         {label && (
@@ -130,27 +166,27 @@ const AppInput = forwardRef<TextInput, AppInputProps>(
           </Text>
         )}
 
-        <View className="relative">
+        <Animated.View style={animatedStyle} className="relative">
           {leftIcon && (
             <View className="absolute left-3 top-1/2 -translate-y-1/2 z-10">
               {leftIcon}
             </View>
           )}
 
+          {/* Animated border overlay for focus effect */}
+          <Animated.View
+            style={borderAnimatedStyle}
+            className="absolute inset-0 border-2 border-primary rounded-lg pointer-events-none z-5"
+          />
+
           <TextInput
             ref={ref}
             {...props}
             multiline={variant === 'textarea'}
             textAlignVertical={variant === 'textarea' ? 'top' : 'center'}
-            onFocus={(e) => {
-              setFocused(true);
-              props.onFocus?.(e);
-            }}
+            onFocus={handleFocus}
             placeholderTextColor={colors.neutrals600}
-            onBlur={(e) => {
-              setFocused(false);
-              props.onBlur?.(e);
-            }}
+            onBlur={handleBlur}
             className={cn(
               inputVariants({
                 variant,
@@ -168,7 +204,7 @@ const AppInput = forwardRef<TextInput, AppInputProps>(
               {rightIcon}
             </View>
           )}
-        </View>
+        </Animated.View>
 
         {(helperText || errorText) && (
           <Text
