@@ -18,6 +18,7 @@ export type RootStackParamList = {
   AppTextDemo: undefined;
   Login: undefined;
   Register: undefined;
+  About: undefined;
 };
 
 // Main Tab Navigator

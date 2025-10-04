@@ -40,7 +40,7 @@ const inputVariants = cva(
       },
       state: {
         default: 'border-neutrals900',
-        focused: 'border-neutrals100',
+        focused: 'border-neutrals600',
         error: 'border-error',
       },
       hasLeftIcon: {
@@ -176,7 +176,7 @@ const AppInput = forwardRef<TextInput, AppInputProps>(
           {/* Animated border overlay for focus effect */}
           <Animated.View
             style={borderAnimatedStyle}
-            className="absolute inset-0 border-2 border-primary rounded-lg pointer-events-none z-5"
+            className="absolute inset-0 border-2 border-neutrals500 rounded-lg pointer-events-none z-5"
           />
 
           <TextInput

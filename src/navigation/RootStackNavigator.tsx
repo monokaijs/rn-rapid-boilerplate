@@ -5,8 +5,6 @@ import MainTabNavigator from "./MainTabNavigator";
 import SettingsScreen from "@/screens/SettingsScreen";
 import ComponentsDemo from "@/screens/ComponentsDemo";
 import CustomScreenHeader from "@/navigation/components/ScreenHeader.tsx";
-
-// Component Demo Screens
 import AppButtonDemoScreen from "@/screens/demos/AppButtonDemoScreen";
 import AvatarDemoScreen from "@/screens/demos/AvatarDemoScreen";
 import BadgeDemoScreen from "@/screens/demos/BadgeDemoScreen";
@@ -17,10 +15,9 @@ import SliderDemoScreen from "@/screens/demos/SliderDemoScreen";
 import SwitchDemoScreen from "@/screens/demos/SwitchDemoScreen";
 import SelectDemoScreen from "@/screens/demos/SelectDemoScreen";
 import AppTextDemoScreen from "@/screens/demos/AppTextDemoScreen";
-
-// Auth Screens
 import LoginScreen from "@/screens/auth/LoginScreen";
 import RegisterScreen from "@/screens/auth/RegisterScreen";
+import AboutScreen from "@/screens/AboutScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -134,6 +131,13 @@ export default function RootStackNavigator() {
         component={RegisterScreen}
         options={{
           title: "Register",
+        }}
+      />
+      <Stack.Screen
+        name="About"
+        component={AboutScreen}
+        options={{
+          title: "About",
         }}
       />
     </Stack.Navigator>

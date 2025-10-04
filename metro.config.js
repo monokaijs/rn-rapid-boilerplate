@@ -13,6 +13,9 @@ const config = {
     alias: {
       "@": path.resolve(__dirname, "src")
     }
+  },
+  transformer: {
+    babelTransformerPath: path.resolve(__dirname, 'scripts/colors-transformer.js'),
   }
 };
 

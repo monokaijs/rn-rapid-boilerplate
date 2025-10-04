@@ -4,10 +4,12 @@ import {useNavigation} from "@react-navigation/native";
 import MenuList from "@/components/ui/MenuList.tsx";
 import Icon from "@/components/ui/Icon.tsx";
 import {AppText, Avatar} from "@/components/ui";
+import {useAppSelector} from "@/store/hooks.ts";
 
 
 const MoreScreen = () => {
   const navigation = useNavigation();
+  const {theme} = useAppSelector(state => state.app);
 
   const handleSettings = () => {
     navigation.navigate("Settings");
@@ -17,12 +19,8 @@ const MoreScreen = () => {
     navigation.navigate("ComponentsDemo");
   };
 
-  const handleLogin = () => {
-    navigation.navigate("Login");
-  };
-
-  const handleRegister = () => {
-    navigation.navigate("Register");
+  const handleAbout = () => {
+    navigation.navigate("About");
   };
 
   return (
@@ -46,7 +44,30 @@ const MoreScreen = () => {
         </View>
       </View>
       <View className={'py-4'}>
-        <Text className={'section-title'}>App</Text>
+        <Text className={'section-title'}>General</Text>
+      </View>
+      <MenuList
+        data={[
+          {
+            icon: () => <Icon
+              name={'SunMoon'}
+              className={"size-22 text-neutrals100"}
+            />,
+            title: "Theme",
+            value: <AppText className={'capitalize text-neutrals100'}>{theme}</AppText>,
+            onPress: handleSettings
+          },
+          {
+            icon: () => <Icon
+              name={'Bell'}
+              className={"size-22 text-neutrals100"}
+            />,
+            title: "Notifications",
+          },
+        ]}
+      />
+      <View className={'py-4'}>
+        <Text className={'section-title'}>Other</Text>
       </View>
       <MenuList
         data={[
@@ -68,20 +89,19 @@ const MoreScreen = () => {
           },
           {
             icon: () => <Icon
-              name={'LogIn'}
+              name={'Gavel'}
               className={"size-22 text-neutrals100"}
             />,
-            title: "Login Demo",
-            onPress: handleLogin
+            title: "Privacy Policy",
           },
           {
             icon: () => <Icon
-              name={'UserPlus'}
+              name={'Info'}
               className={"size-22 text-neutrals100"}
             />,
-            title: "Register Demo",
-            onPress: handleRegister
-          }
+            title: "About",
+            onPress: handleAbout
+          },
         ]}
       />
     </View>

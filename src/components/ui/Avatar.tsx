@@ -3,6 +3,7 @@ import { View, Text, Image, ImageSourcePropType } from 'react-native';
 import { cn } from '@/utils';
 import { cva } from 'class-variance-authority';
 import {ClassValue} from "clsx";
+import {useColors} from "@/hooks/useColors.ts";
 
 interface AvatarProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -74,7 +75,7 @@ const getInitials = (text: string): string => {
 
 const getIconSize = (size: 'sm' | 'md' | 'lg' | 'xl'): number => {
   switch (size) {
-    case 'sm': return 16;
+    case 'sm': return 12;
     case 'md': return 20;
     case 'lg': return 28;
     case 'xl': return 36;
@@ -92,6 +93,7 @@ export default function Avatar({
   icon,
   alt,
 }: AvatarProps) {
+  const colors = useColors();
   const renderContent = () => {
     // Priority: image > icon > text
     if (source) {
@@ -108,7 +110,7 @@ export default function Avatar({
     if (icon) {
       return React.cloneElement(icon as any, {
         size: getIconSize(size),
-        color: variant === 'default' ? '#949494' : variant === 'primary' ? '#ffffff' : '#1d1d1d',
+        color: variant === 'default' ? colors.foreground : variant === 'primary' ? colors.primaryForeground : colors.secondaryForeground,
       });
     }
 

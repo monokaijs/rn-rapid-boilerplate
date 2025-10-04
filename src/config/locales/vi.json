@@ -22,5 +22,19 @@
   "APP_INTRODUCTION": "Ứng dụng này là một ví dụ về Reach Native Rapid Boilerplate. Chúng tôi đã xây dựng ứng dụng này để giúp bạn phát triển ứng dụng của mình một cách nhanh chóng và hiệu quả hơn.",
   "AUTHENTICATION": "Xác thực",
   "LOGIN": "Đăng nhập",
-  "REGISTER": "Đăng ký"
+  "REGISTER": "Đăng ký",
+  "ABOUT": "Giới thiệu",
+  "ABOUT_TITLE": "Giới thiệu ứng dụng",
+  "ABOUT_INTRO": "Một boilerplate React Native sẵn sàng cho sản xuất, được thiết kế để tăng tốc phát triển ứng dụng di động của bạn với các phương pháp hay nhất và công cụ hiện đại.",
+  "PROJECT_INFO": "Thông tin dự án",
+  "PROJECT_BY": "Dự án bởi",
+  "GITHUB_REPO": "Kho GitHub",
+  "AUTHOR_CONTACT": "Liên hệ tác giả",
+  "CONTACT_EMAIL": "Email liên hệ",
+  "AUTHOR_WEBSITE": "Website tác giả",
+  "AUTHOR_GITHUB": "Hồ sơ GitHub",
+  "AUTHOR_LINKEDIN": "Hồ sơ LinkedIn",
+  "CONTACT_ME": "Cần trợ giúp?",
+  "CONTACT_ME_DESC": "Hãy liên hệ nếu bạn cần hỗ trợ với boilerplate này hoặc có bất kỳ câu hỏi nào về việc triển khai.",
+  "SEND_EMAIL": "Gửi Email"
 }

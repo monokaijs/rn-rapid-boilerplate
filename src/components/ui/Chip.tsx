@@ -3,6 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import { cn } from '@/utils';
 import { cva } from 'class-variance-authority';
 import { X } from 'lucide-react-native';
+import {useColors} from "@/hooks/useColors.ts";
 
 interface ChipProps {
   children: React.ReactNode;
@@ -69,9 +70,9 @@ const chipTextVariants = cva(
     variants: {
       variant: {
         default: 'text-neutrals100',
-        primary: 'text-white',
-        secondary: 'text-neutrals800',
-        outline: 'text-neutrals100',
+        primary: 'text-primary-foreground',
+        secondary: 'text-secondary-foreground',
+        outline: 'text-foreground',
       },
       size: {
         sm: 'text-xs',
@@ -120,15 +121,13 @@ export default function Chip({
   textClassName,
   icon,
 }: ChipProps) {
+  const colors = useColors();
   const getTextColor = () => {
-    if (selected && (variant === 'default' || variant === 'outline')) {
-      return '#ffffff';
-    }
     switch (variant) {
-      case 'primary': return '#ffffff';
-      case 'secondary': return '#1d1d1d';
-      case 'outline': return '#949494';
-      default: return '#949494';
+      case 'primary': return colors.primaryForeground;
+      case 'secondary': return colors.secondaryForeground;
+      case 'outline': return colors.foreground;
+      default: return colors.foreground;
     }
   };
 

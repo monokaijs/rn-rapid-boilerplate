@@ -1,5 +1,17 @@
 // tailwind.config.js
 const plugin = require('tailwindcss/plugin');
+const {AppColors} = require('./src/config/colors');
+
+function toKebab(key) {
+  return key
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/_/g, '-')
+    .toLowerCase();
+}
+
+const colorsConfig = Object.fromEntries(
+  Object.entries(AppColors).map(([k, v]) => [toKebab(k), `rgb(var(--color-${toKebab(k)}) / <alpha-value>)`])
+);
 
 module.exports = {
   darkMode: 'class',
@@ -30,79 +42,7 @@ module.exports = {
         '4xl': 32,
         '5xl': 36,
       },
-      colors: {
-        // Theme-aware colors using CSS custom properties
-        'foreground': 'rgb(var(--color-foreground) / <alpha-value>)',
-        'background': 'rgb(var(--color-background) / <alpha-value>)',
-        'primary': 'rgb(var(--color-primary) / <alpha-value>)',
-        'secondary': 'rgb(var(--color-secondary) / <alpha-value>)',
-        'success': 'rgb(var(--color-success) / <alpha-value>)',
-        'warning': 'rgb(var(--color-warning) / <alpha-value>)',
-        'error': 'rgb(var(--color-error) / <alpha-value>)',
-        'green': 'rgb(var(--color-green) / <alpha-value>)',
-        'pink': 'rgb(var(--color-pink) / <alpha-value>)',
-        'primary100': 'rgb(var(--color-primary100) / <alpha-value>)',
-        'primary200': 'rgb(var(--color-primary200) / <alpha-value>)',
-        'primary300': 'rgb(var(--color-primary300) / <alpha-value>)',
-        'primary400': 'rgb(var(--color-primary400) / <alpha-value>)',
-        'primary500': 'rgb(var(--color-primary500) / <alpha-value>)',
-        'primary600': 'rgb(var(--color-primary600) / <alpha-value>)',
-        'primary700': 'rgb(var(--color-primary700) / <alpha-value>)',
-        'primary800': 'rgb(var(--color-primary800) / <alpha-value>)',
-        'primary900': 'rgb(var(--color-primary900) / <alpha-value>)',
-        'primary1000': 'rgb(var(--color-primary1000) / <alpha-value>)',
-        'secondary100': 'rgb(var(--color-secondary100) / <alpha-value>)',
-        'secondary200': 'rgb(var(--color-secondary200) / <alpha-value>)',
-        'secondary300': 'rgb(var(--color-secondary300) / <alpha-value>)',
-        'secondary400': 'rgb(var(--color-secondary400) / <alpha-value>)',
-        'secondary500': 'rgb(var(--color-secondary500) / <alpha-value>)',
-        'secondary600': 'rgb(var(--color-secondary600) / <alpha-value>)',
-        'secondary700': 'rgb(var(--color-secondary700) / <alpha-value>)',
-        'secondary800': 'rgb(var(--color-secondary800) / <alpha-value>)',
-        'secondary900': 'rgb(var(--color-secondary900) / <alpha-value>)',
-        'secondary1000': 'rgb(var(--color-secondary1000) / <alpha-value>)',
-        'neutrals-foreground': 'rgb(var(--color-neutrals-foreground) / <alpha-value>)',
-        'neutrals100': 'rgb(var(--color-neutrals100) / <alpha-value>)',
-        'neutrals200': 'rgb(var(--color-neutrals200) / <alpha-value>)',
-        'neutrals300': 'rgb(var(--color-neutrals300) / <alpha-value>)',
-        'neutrals400': 'rgb(var(--color-neutrals400) / <alpha-value>)',
-        'neutrals500': 'rgb(var(--color-neutrals500) / <alpha-value>)',
-        'neutrals600': 'rgb(var(--color-neutrals600) / <alpha-value>)',
-        'neutrals700': 'rgb(var(--color-neutrals700) / <alpha-value>)',
-        'neutrals800': 'rgb(var(--color-neutrals800) / <alpha-value>)',
-        'neutrals900': 'rgb(var(--color-neutrals900) / <alpha-value>)',
-        'neutrals1000': 'rgb(var(--color-neutrals1000) / <alpha-value>)',
-        'neutrals-background': 'rgb(var(--color-neutrals-background) / <alpha-value>)',
-        'success100': 'rgb(var(--color-success100) / <alpha-value>)',
-        'success200': 'rgb(var(--color-success200) / <alpha-value>)',
-        'success300': 'rgb(var(--color-success300) / <alpha-value>)',
-        'warning100': 'rgb(var(--color-warning100) / <alpha-value>)',
-        'warning200': 'rgb(var(--color-warning200) / <alpha-value>)',
-        'warning300': 'rgb(var(--color-warning300) / <alpha-value>)',
-        'error100': 'rgb(var(--color-error100) / <alpha-value>)',
-        'error200': 'rgb(var(--color-error200) / <alpha-value>)',
-        'error300': 'rgb(var(--color-error300) / <alpha-value>)',
-        'green100': 'rgb(var(--color-green100) / <alpha-value>)',
-        'green200': 'rgb(var(--color-green200) / <alpha-value>)',
-        'green300': 'rgb(var(--color-green300) / <alpha-value>)',
-        'green400': 'rgb(var(--color-green400) / <alpha-value>)',
-        'green500': 'rgb(var(--color-green500) / <alpha-value>)',
-        'green600': 'rgb(var(--color-green600) / <alpha-value>)',
-        'green700': 'rgb(var(--color-green700) / <alpha-value>)',
-        'green800': 'rgb(var(--color-green800) / <alpha-value>)',
-        'green900': 'rgb(var(--color-green900) / <alpha-value>)',
-        'green1000': 'rgb(var(--color-green1000) / <alpha-value>)',
-        'pink100': 'rgb(var(--color-pink100) / <alpha-value>)',
-        'pink200': 'rgb(var(--color-pink200) / <alpha-value>)',
-        'pink300': 'rgb(var(--color-pink300) / <alpha-value>)',
-        'pink400': 'rgb(var(--color-pink400) / <alpha-value>)',
-        'pink500': 'rgb(var(--color-pink500) / <alpha-value>)',
-        'pink600': 'rgb(var(--color-pink600) / <alpha-value>)',
-        'pink700': 'rgb(var(--color-pink700) / <alpha-value>)',
-        'pink800': 'rgb(var(--color-pink800) / <alpha-value>)',
-        'pink900': 'rgb(var(--color-pink900) / <alpha-value>)',
-        'pink1000': 'rgb(var(--color-pink1000) / <alpha-value>)',
-      }
+      colors: colorsConfig
     }
   },
 };

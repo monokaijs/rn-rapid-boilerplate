@@ -1,14 +1,13 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {Text, View} from 'react-native';
-import {PanGestureHandler, PanGestureHandlerGestureEvent} from 'react-native-gesture-handler';
+import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import Animated, {
-  Extrapolate,
+  Extrapolation,
   interpolate,
-  runOnJS,
-  useAnimatedGestureHandler,
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
+import {runOnJS} from 'react-native-worklets';
 import {cn} from '@/utils';
 import {cva} from 'class-variance-authority';
 
@@ -128,21 +127,21 @@ export default function Slider({
     [minimumValue, maximumValue, step, onValueChange]
   );
 
-  const gestureHandler = useAnimatedGestureHandler<PanGestureHandlerGestureEvent>({
-    onStart: () => {
+  const pan = Gesture.Pan()
+    .onBegin(() => {
       scale.value = 1.2;
-    },
-    onActive: (event) => {
+    })
+    .onChange((event) => {
       const progress = event.x / sliderWidth.value;
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       const newValue = minimumValue + clampedProgress * (maximumValue - minimumValue);
       runOnJS(updateValue)(newValue);
-    },
-    onEnd: () => {
+    })
+    .onFinalize(() => {
       scale.value = 1;
-    },
-  });
+    })
+    .enabled(!disabled);
 
   const thumbAnimatedStyle = useAnimatedStyle(() => {
     const thumbSize = size === 'sm' ? 16 : size === 'md' ? 20 : 24;
@@ -152,7 +151,7 @@ export default function Slider({
       progress,
       [0, 1],
       [0, sliderWidth.value - thumbSize],
-      Extrapolate.CLAMP
+      Extrapolation.CLAMP
     );
 
     return {
@@ -183,7 +182,7 @@ export default function Slider({
       )}
 
       <View className="flex-row items-center">
-        <PanGestureHandler onGestureEvent={gestureHandler} enabled={!disabled}>
+        <GestureDetector gesture={pan}>
           <Animated.View
             className={cn(sliderVariants({size, disabled}))}
             style={{flex: 1}}
@@ -191,22 +190,19 @@ export default function Slider({
               sliderWidth.value = event.nativeEvent.layout.width;
             }}
           >
-            {/* Track */}
             <View className={cn(trackVariants({size}), trackClassName)}/>
 
-            {/* Fill */}
             <Animated.View
               style={fillAnimatedStyle}
               className={cn(fillVariants({size}), fillClassName)}
             />
 
-            {/* Thumb */}
             <Animated.View
               style={thumbAnimatedStyle}
               className={cn(thumbVariants({size}), thumbClassName)}
             />
           </Animated.View>
-        </PanGestureHandler>
+        </GestureDetector>
 
         {showValue && (
           <Text className="text-foreground font-sans-medium ml-3 min-w-12 text-right">

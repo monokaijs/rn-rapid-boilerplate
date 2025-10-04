@@ -19,9 +19,9 @@ const badgeVariants = cva(
         default: 'bg-neutrals700 border-neutrals600 text-neutrals100',
         primary: 'bg-primary border-primary text-white',
         secondary: 'bg-secondary border-secondary text-neutrals800',
-        success: 'bg-success100 border-success100 text-white',
-        warning: 'bg-warning100 border-warning100 text-white',
-        error: 'bg-error100 border-error100 text-white',
+        success: 'bg-success/20 border-success/20 text-white',
+        warning: 'bg-warning/20 border-warning/20 text-white',
+        error: 'bg-error/20 border-error/20 text-white',
       },
       size: {
         sm: 'px-2 py-0.5 min-h-5',
@@ -43,9 +43,9 @@ const badgeTextVariants = cva(
       variant: {
         default: 'text-neutrals100',
         primary: 'text-white',
-        secondary: 'text-neutrals300',
-        success: 'text-success200',
-        warning: 'text-warning300',
+        secondary: 'text-white',
+        success: 'text-success',
+        warning: 'text-warning',
         error: 'text-white',
       },
       size: {

@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MainTabParamList } from "./types";
-import HomeScreen from "@/screens/HomeScreen";
+import HomeScreen from "@/screens/home";
 import MoreScreen from "@/screens/MoreScreen";
 import CustomTabBar from "@/navigation/components/CustomTabBar.tsx";
 
