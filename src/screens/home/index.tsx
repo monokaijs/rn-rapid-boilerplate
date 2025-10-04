@@ -50,7 +50,7 @@ export default function HomeScreen() {
             <AppText>
               {t('NET_WORTH')}
             </AppText>
-            <AppText className={'text-6xl font-sans-bold'}>
+            <AppText className={'text-6xl leading-tight font-sans-bold'}>
               $1,000,000
             </AppText>
             <View className={'flex flex-row items-center'}>
