@@ -8283,6 +8283,7 @@ __metadata:
     "@react-native-community/cli-platform-ios": "npm:19.0.0"
     "@react-native/babel-preset": "npm:0.80.1"
     "@react-native/eslint-config": "npm:0.80.1"
+    "@react-native/gradle-plugin": "npm:0.80.1"
     "@react-native/metro-config": "npm:0.80.1"
     "@react-native/typescript-config": "npm:0.80.1"
     "@react-navigation/bottom-tabs": "npm:^7.4.7"
