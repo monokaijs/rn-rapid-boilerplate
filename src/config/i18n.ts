@@ -1,9 +1,15 @@
 import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import * as RNLocalize from 'react-native-localize';
-
 import en from './locales/en.json';
 import vi from './locales/vi.json';
+import bn from './locales/bn.json';
+import cn from './locales/cn.json';
+import fil from './locales/fil.json';
+import fr from './locales/fr.json';
+import hi from './locales/hi.json';
+import id from './locales/id.json';
+import ar from './locales/ar.json';
 
 export const LANGUAGES = {
   en: {
@@ -17,6 +23,48 @@ export const LANGUAGES = {
     name: 'Vietnamese',
     nativeName: 'Tiếng Việt',
     schema: vi,
+  },
+  bn: {
+    code: 'bn',
+    name: 'Bengali',
+    nativeName: 'বাংলা',
+    schema: bn,
+  },
+  cn: {
+    code: 'cn',
+    name: 'Chinese',
+    nativeName: '中文',
+    schema: cn,
+  },
+  fil: {
+    code: 'fil',
+    name: 'Filipino',
+    nativeName: 'Filipino',
+    schema: fil,
+  },
+  fr: {
+    code: 'fr',
+    name: 'French',
+    nativeName: 'Français',
+    schema: fr,
+  },
+  hi: {
+    code: 'hi',
+    name: 'Hindi',
+    nativeName: 'हिंदी',
+    schema: hi,
+  },
+  id: {
+    code: 'id',
+    name: 'Indonesian',
+    nativeName: 'Bahasa Indonesia',
+    schema: id,
+  },
+  ar: {
+    code: 'ar',
+    name: 'Arabic',
+    nativeName: 'العربية',
+    schema: ar,
   },
 } as const;
 
@@ -59,7 +107,6 @@ i18n
     returnEmptyString: false,
   });
 
-export default i18n;
 
 
 Object.values(LANGUAGES).forEach(lang => {
@@ -77,3 +124,5 @@ export const getAvailableLanguages = () => {
     ...info,
   }));
 };
+
+export default i18n;

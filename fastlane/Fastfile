@@ -1,0 +1,38 @@
+default_platform(:android)
+
+platform :android do
+  desc "Increment version, commit changes, build AAB and deploy to Production on Play Store."
+  lane :push_production do
+
+    increment_version_code(
+      gradle_file_path: "android/app/build.gradle"
+    )
+
+    increment_version_name(
+      gradle_file_path: "android/app/build.gradle",
+      bump_type: "patch"
+    )
+
+    Dir.chdir("..") do
+      sh("git add android/app/build.gradle")
+      sh("git commit -m \"Version Bump [ci skip]\"")
+      sh("git push")
+    end
+
+    gradle(
+      task: "bundle",
+      build_type: "Release",
+      project_dir: "android"
+    )
+
+    upload_to_play_store(
+      track: "production",
+      release_status: "completed",
+      json_key: "fastlane/supply.json",
+      package_name: "com.monokaijs.rapidboilerplate",
+      skip_upload_apk: true,
+      timeout: 600,
+    )
+
+  end
+end

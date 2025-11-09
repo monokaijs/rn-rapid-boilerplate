@@ -5,7 +5,8 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "node scripts/generate-colors-css.js --watch & react-native start"
+    "start": "node scripts/generate-colors-css.js --watch & react-native start",
+    "generate-translation": "node scripts/translator/index.js"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^5.2.6",
@@ -52,9 +53,14 @@
     "@types/react-test-renderer": "^19.1.0",
     "@types/typescript": "^2.0.0",
     "babel-plugin-module-resolver": "^5.0.2",
+    "chalk": "4.1.2",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
     "metro-react-native-babel-transformer": "^0.77.0",
+    "openai": "^6.8.1",
+    "react-native-rename": "^3.2.17",
     "react-test-renderer": "19.1.0",
+    "rn-app-icons": "^1.0.7",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^3.4.17",
     "typescript": "5.0.4"
