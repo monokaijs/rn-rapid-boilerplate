@@ -5,7 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start"
+    "start": "node scripts/generate-colors-css.js --watch & react-native start"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^5.2.6",
@@ -52,8 +52,6 @@
     "@types/typescript": "^2.0.0",
     "babel-plugin-module-resolver": "^5.0.2",
     "clsx": "^2.1.1",
-    "esbuild": "^0.25.10",
-    "esbuild-register": "^3.6.0",
     "metro-react-native-babel-transformer": "^0.77.0",
     "react-test-renderer": "19.1.0",
     "tailwind-merge": "^3.3.1",

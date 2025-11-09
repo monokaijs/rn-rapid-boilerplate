@@ -1,5 +1,5 @@
-const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
-const { withNativeWind } = require("nativewind/metro");
+const {getDefaultConfig, mergeConfig} = require("@react-native/metro-config");
+const {withNativeWind} = require("nativewind/metro");
 const path = require("path");
 
 /**
@@ -13,9 +13,6 @@ const config = {
     alias: {
       "@": path.resolve(__dirname, "src")
     }
-  },
-  transformer: {
-    babelTransformerPath: path.resolve(__dirname, 'scripts/colors-transformer.js'),
   }
 };
 
